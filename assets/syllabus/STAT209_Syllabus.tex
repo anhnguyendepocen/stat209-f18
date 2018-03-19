@@ -5,14 +5,14 @@
 \usepackage{lastpage}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
-\usepackage{enumitem}
 
-\geometry{top=0.7in, bottom=1in, left=0.7in, right=0.7in, marginparsep=4pt, marginparwidth=1in}
+\geometry{top=1in, bottom=1in, left=1in, right=1in, marginparsep=4pt, marginparwidth=1in}
 
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancyplain}
 \fancyhf{}
-\cfoot{\thepage\ of \pageref{LastPage}}
+\lfoot{As of 2018-03-19}
+\rfoot{page \thepage\ of \pageref{LastPage}}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
@@ -34,8 +34,8 @@
 \begin{document}
 
 \begin{center}
-{\bf MATH/LING 289: Introduction to Data Science, Fall 2018} \\
-Tuesday, Thursday 13:30-14:45 \quad PURH G13\\
+{\bf MATH/STAT 209: Introduction to Statistical Modeling, Fall 2018} \\
+Tuesday, Thursday 10:30-11:45 \quad JPSN G28\\
 \end{center}
 
 \bigskip
@@ -45,141 +45,395 @@ Tuesday, Thursday 13:30-14:45 \quad PURH G13\\
 {\bf Instructor:} &  {\bf Taylor Arnold} \\
 E-mail: & \href{mailto:tarnold2@richmond.edu}{tarnold2@richmond.edu} \\
 Office: & Jepson Hall, Rm 218 \\
-Office hours: & to be determined \\
-Course Website: & \url{https://statsmaths.github.io/stat289-f18}
+Office hours: & To Be Determined\\
 \end{tabular}
 
 \vspace{0.5cm}
 
-\textbf{Overview:} \vspace{6pt}
+\textbf{Description:} \vspace{6pt}
 
-Data science is an interdisciplinary field concerned with extracting knowledge
-from data and communicating those results to some public audience. Data
-science needs to be learned \textit{by doing} data science. There are
-no short-cuts and the process cannot be learned by simply working our way
-methodically through a textbook of disconnected topics.\\
+This course broadly covers the entire process of collecting,
+cleaning, visualizing, modeling, and presenting datasets. It
+has a MATH designation but is not a \textit{mathematics} course.
+The focus is on applied statistics and data analysis
+rather than a detailed study of symbolic mathematics. By the end
+of the semester you will feel confident collecting, analyzing,
+and writing about datasets from a variety of fields. You will be
+able to use these skills to address data-driven problems in a wide
+range of application domains.
 
-Therefore, this course will be taught using a problem-based learning model. As
-a class, we will be addressing an open ended research question and learning
-various skills that will assist our inquiry. Both individually and in small
-groups, students will take responsibility for particular subtasks that drive
-our research forward. At the end of the semester students will have acquired
-a toolkit of methods, and the knowledge of how to use them in practice, to
-address important social, cultural, and scientific questions with data-driven
-techniques.\\
+\bigskip
 
-We will make heavy use of computing throughout the semester, but \textit{no
-prior programming experience is required}. Also note that this course has a
-MATH designation because statistics is currently housed in the mathematics
-department. The topics of this course, however, do not fall within the
-traditional disciplinary boundaries of mathematics.\\
+\textbf{Computing:} \vspace{6pt}
 
-\textbf{Research Question:} \vspace{6pt}
+To facilitate your ability to actually \textit{do} statistics,
+most class meetings will involve some form of computing.
+No prior programming experience is assumed or required.
 
-Our object of study for this semester (Fall 2018) concerns the edit history
-of pages on Wikipedia. Our research for the semester will be guided by drawing
-on questions such as:
+\medskip
 
+We will use the \textbf{R} programming environment throughout the
+semester. It is freely available for all major operating systems and
+is pre-installed on many campus computers. You can download it and
+all supporting files for your own machine via these links:
+\begin{center}
+\url{https://cran.r-project.org/} \\
+\url{https://www.rstudio.com/}
+\end{center}
+The lab computers in Jepson are available and contain all of the
+required software. I strongly recommend, however, downloading these
+on your own machine so that you will be able to work on assignments
+without needing to work only in the computer lab.
+
+\bigskip
+
+\textbf{Course Website:} \vspace{6pt}
+
+All of the materials and assignments for the course will be posted
+on the class website:
+\begin{quote}
+\url{https://statsmaths.github.io/stat209-f18}
+\end{quote}
+The website contains notes, assignment details, and
+supplemental materials. At the end of the semester, this version of
+the course will be archived and available for your reference.
+
+\vspace{0.4cm}
+
+\textbf{GitHub:} \vspace{6pt}
+
+Your work for this semester will be submitted through GitHub,
+the same platform that hosts our website, using the GitHub
+classroom program. You will need to set up a free account, which
+we will cover during the first several week of class.
+
+\newpage
+
+\textbf{Labs:} \vspace{6pt}
+
+Nearly every course meeting will have an associated lab to complete. We will
+usually work on these in class. By the start of the next course meeting, you
+must complete the questions contained within the lab notebook. Assignments
+will be submitted through GitHub; this process will explained in more detail
+during class. \\
+
+\bigskip
+
+\textbf{Midterm Exams:} \vspace{6pt}
+
+The course will have three in-class exams throughout the semester. These will
+resemble the daily lab assignments and will be administered on the computers
+in our classroom. Dates for these exams will be distributed roughly evenly
+throughout the first twelve weeks of the course:
 \begin{itemize}\setlength\itemsep{0em}
-\item How is knowledge being represented through the works of an anonymous,
-decentralized collective of users connected across the internet?
-\item What role does memory play in the representation of current and
-semi-current events?
-\item What kinds of knowledge are privileged, or taken for granted, by
-citation patterns on the interent?
-\item How do cultural and linguistic factors play into the structure of
-Wikipedia pages (by looking at pages across different languages)?
-\item What role do images and other media play in the structure and
-development of encyclopedic pages? has this changed over time?
+\item \textbf{Midterm I}: 2018-09-20 (Thursday)
+\item \textbf{Midterm II}: 2018-10-23 (Tuesday)
+\item \textbf{Midterm III}: 2018-11-15 (Thursday)
 \end{itemize}
+The two weeks of class following Thanksgiving break will be focused on
+finishing and presenting your final data project.\\
 
-These questions can be studied from a number of disciplinary perspectives.
-For example, one might draw on methods from from one or more of: psychology,
-sociology, linguistics, political science, American studies, media studies,
-and critical theory. In this course we will see how the methods of data
-science provide a new set of tools that are able to engage with, rather than
-against, these disciplinary techniques while opening the possibility of
-producing knowledge through the study of large unstructured data sets.
+\bigskip
 
-\clearpage
+\textbf{Data Projects:} \vspace{6pt}
 
-\textbf{Grades:} \vspace{6pt}
+While the midterms serve to make sure you are following along
+with the general concepts, the ultimate aim of the course is to teach
+you how to \textit{apply} statistics to real-world questions. To
+this end, you will also complete a final data-oriented project for the
+course. Details for this project and how it will be graded will be given
+towards the middle of the term. The final week of the course will consist
+of presentations of your findings.
 
-Your final grade will consist of three elements, weighted as follows:
+\bigskip
 
-\begin{itemize}[noitemsep,topsep=6pt]
-\item Class Participation, 20\%
-\item Project Prospectus, 20\%
-\item Final Project and Presentation, 60\%
+\textbf{Final Grades:} \vspace{6pt}
+
+The final grade will be determined by weighting the labs, exams, and project
+as follows:
+\begin{itemize}\setlength\itemsep{0em}
+\item \textbf{Labs and Participation}: 20\%
+\item \textbf{Midterm Exams}: 60\% (20\% each)
+\item \textbf{Final Project}: 20\%
 \end{itemize}
-
-\vspace{3pt}
-
 Course expectations and community standards will be discussed, developed and
 distributed in the first week of the course. This will include policies for
 class participation, attendance, and late work.
 
-\vspace{0.5cm}
+\bigskip
 
-\textbf{Texts:} \vspace{6pt}
+\textbf{Notice:} \vspace{6pt}
 
-Readings for the course, which will help us address and position our research,
-will be pulled from open access journal articles and the following required
-text:
+I reserve the right to modify this syllabus, with advanced warning, throughout
+the semester. If necessary, I will email the class list and post an updated
+version of the document on the course website.
 
-\begin{quote}
-Jemielniak, Dariusz, 2014. \textit{Common Knowledge?: An Ethnography
-of Wikipedia.} Stanford University Press.
-\end{quote}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newpage
 
-As a reference for technical topics, I will make frequent reference to:
+% \textbf{Learning Objectives (detail):} \vspace{6pt}
 
-\begin{quote}
-Wickham, Hadley and Grolemund, Garrett, 2016.
-\textit{R for Data Science: Import, Tidy, Transform, Visualize, and Model
-Data.} O'Reilly Media.
-\end{quote}
+% Below is a more detailed description of each week's material. Note
+% that the exact topics, pace, and coverage may change over the course
+% of the semester.
 
-This second text as it is available online
-(\url{http://r4ds.had.co.nz/}) for free and in its entirety.
+% \vspace{1.0cm}
 
-\vspace{0.5cm}
+% \def\labelitemi{}
+% \def\labelitemii{}
 
-\textbf{Computing:} \vspace{6pt}
+% \underline{Week 01, Reproducible research:}
+% In this unit we explore the basics of statistical computing.
+% We look at examples and benefits of plain text formats for data,
+% code, and analyses.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   install R, RStudio and user-contributed packages
+% \item
+%   understand basic version control using the web-based GitHub GUI
+% \item
+%   create CSV files and read them into R
+% \item
+%   basic techniques for accessing variables in data objects
+% \item
+%   selecting variable names
+% \item
+%   constructing a data dictionary
+% \end{itemize}
 
-We will use the \textbf{R} programming environment throughout the
-semester. It is freely available for all major operating systems and
-is pre-installed on many campus computers. No prior programming experience is
-assumed or required for this course. We will install the required software
-on your computer during the first week of the course (alternatively, R is
-installed in several computer labs across campus).
+% \bigskip
 
-\vspace{0.5cm}
+% \underline{Week 02, Variable types and numeric summaries:}
+% We begin our study of tabular data, with observations stored in rows and
+% variables stored in columns. We start by describing the types of
+% data that can be stored. Next, methods for summarizing and graphing
+% numeric and categorical data are developed.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   describe and compute means and medians (using R and by hand)
+% \item
+%   describe and compute quantiles (using R and, for simple cases, by
+%   hand)
+% \item
+%   describe and compute the standard deviation
+% \item
+%   differentiate between numeric and categorical data
+% \item
+%   treating numeric data as categorical data
+% \item
+%   create categorical variables by grouping numeric data
+% \end{itemize}
 
-\textbf{Data Science Topics:} \vspace{6pt}
+% \bigskip
 
-Given the project-oriented aspect of this course, exact schedule of topics
-will depend on and adapt to the natural course of our investigation. Technical
-data-science topics that may be covered during the semester include:
+% \underline{Week 03, The Grammar of Graphics:}
+% Building off of our basic plots, here we describe a self-contained
+% system for the creation of statistical graphics. Putting the topics
+% together allow for the construction of arbitrarily complex
+% visualizations of data.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   the basic data aesthetics (x, y, label, color, size, and alpha)
+% \item
+%   the \textbf{ggplot2} syntax
+% \item
+%   mapping variables to aesthetics
+% \item
+%   setting fixed aesthetics
+% \item
+%   constructing layers of points, lines
+% \end{itemize}
 
-\begin{itemize}[noitemsep,topsep=6pt]
-\item data structures for storing data
-\item visualization techniques for exploratory analysis
-\item web scrapping
-\item document summarization
-\item sentence parsing
-\item named entity recognition (NER)
-\item automated geocoding
-\item dimensionality reduction
-\item topic models
-\item network analysis
-\item image processing
-\end{itemize}
+% \bigskip
 
-\vspace{3pt}
+% \underline{Week 04, Advanced Graphics:}
+% Here we build off of the grammar of graphics to include
+% other layer types, manual annotations, and building
+% professional graphics.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   describe scales and themes in the grammar of graphics
+% \item
+%   use manual annotations to give context to graphics
+% \item
+%   make use of multiple datasets within a single plot
+% \item
+%   faceting by categorical variables
+% \end{itemize}
 
-Strong consideration will be given to the specific of interests and
-motivations of students enrolled in the course.
+% \bigskip
+
+% \underline{Week 05, Filtering and Summarizing Data:}
+% Often, data is given or found in a different format than is required for
+% an analysis. In this unit, we study techniques for filtering and
+% restructuring data. One particular focus is the study of how to
+% change the \textit{level of analysis} of a data set, such as taking
+% data originally about individuals and turning it into a dataset to
+% study cities or counties.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   syntax of the filter command
+% \item
+%   boolean variables
+% \item
+%   binary operators: ``and'', ``or''
+% \item
+%   binary operators: greater than, less than
+% \item
+%   set containment
+% \item
+%   random subsets
+% \item
+%   syntax of the summarize command
+% \item
+%   counting grouped data
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Week 06, Statistical Inference:}
+% Given a sample of data taken from a larger population, we can use
+% models to estimate how well the sample resembles the entire population.
+% This unit covers an introduction to these techniques, known as statistical
+% inference. The same techniques can be used to study the outcome of random
+% processes.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   sample and population statistics
+% \item
+%   independence
+% \item
+%   standard errors
+% \item
+%   confidence intervals
+% \item
+%   t-tests
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Week 07, Data Analysis and Review:}
+% A review of the prior weeks and applications to a
+% new dataset. First midterm on Thursday.
+
+% \bigskip
+
+% \underline{Week 08, Communicating Statistical Results:}
+% In this unit we cover how to construct arguments using evidence derived
+% from data.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   deductive versus inductive reasoning
+% \item
+%   understanding audience (technical vs.~general)
+% \item
+%   describe exploratory work and hypothesis / thesis generation
+% \item
+%   describe inferential statistics and hypothesis validation
+% \item
+%   include graphical annotations
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Spring Break}
+
+% \bigskip
+
+% \underline{Week 09, Normalized Data:}
+% In this unit, we will explore and implement best practices for collecting and
+% organizing data.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   determining table variables
+% \item
+%   specifying variable types
+% \item
+%   consistency standards
+% \item
+%   ISO date and time standards (ISO 8601)
+% \item
+%   standards for location data: country codes (ISO 3166), languages (ISO
+%   639), currency (ISO 4217), and US FIPS codes
+% \item
+%   the tidy data model: rows, columns, and tables
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Week 10, Joining Relational Data:}
+% We also build off of the last week's material by exploring
+% concepts of data manipulation and data
+% collection to describe methods for working simultaneously with many
+% tables linked together by common keys.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   primary keys
+% \item
+%   foreign keys
+% \item
+%   composite keys
+% \item
+%   inner and outer joins
+% \item
+%   filtering joins
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Week 11, Working with strings:}
+% Here, we study techniques for using manipulating data stored as strings. We use the stringi library in R to apply functions using fixed strings as well as a standard for describing patterns called regular expressions. You will become familiar with the following tasks and concepts:
+% \begin{itemize}\setlength\itemsep{0em}
+% \item detecting substrings
+% \item extracting substrings
+% \item removing substrings
+% \item counting substrings
+% \item describing repeating patterns
+% \item denoting letters, numbers, and word boundaries
+% \item anchoring regular expressions
+% \item the UTF-8 encoding
+% \item ICU and ISO-639
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Week 12, Text mining:}
+% This unit builds off of the basic string processing tasks to study
+% textual corpora. You will become familiar with the following concepts
+% and comfortable applying them to new, raw textual data:
+% \begin{itemize}\setlength\itemsep{0em}
+% \item tokenization
+% \item term-frequency matrices
+% \item lemmatization
+% \item part-of-speech tags
+% \item dependencies
+% \item named entities
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Week 13, Ethical Guidelines for Statistical Practice:}
+% We discuss ethical issues surrounding the practice of data analysis.
+% These include:
+% \begin{itemize}\setlength\itemsep{0em}
+% \item data ownership
+% \item informed consent and IRB
+% \item data privacy and anonymity
+% \item open data
+% \item $p$-hacking / data dredging
+% \item problematic variables, discrimination, and proxies
+% \item algorithmic fairness
+% \item confirmation bias
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Week 14, Case Study and Review:}
+% A review of the prior weeks and applications to a
+% new dataset. Second midterm on Thursday.
+
+
+
 
 \end{document}
 
