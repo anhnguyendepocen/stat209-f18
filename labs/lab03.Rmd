@@ -1,0 +1,29 @@
+---
+title: "Lab 03: Exploratory Data Analysis"
+output: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+```
+
+The lab today lets you see a few more things that we can do in R with the
+Arbuthnot dataset. Again, we will cover the specifics in a few weeks. The
+point is to become familiar with the R interface so that once we get to
+formal graphics the code looks less overwhelming.
+
+We need to read in the Arbuthnot dataset once again:
+
+```{r}
+
+```
+
+
+
+## Submission
+
+Once you fill in your answers above, save the file and submit using GitHub just
+as you did with the first assignment.

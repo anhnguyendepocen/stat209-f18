@@ -1,0 +1,110 @@
+---
+title: "Lab 05: Data Dictionary"
+output: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+```
+
+Here is a template for creating a data dictionary in RMarkdown:
+
+- **student_name**: a character variable giving each student's given (i.e.,
+what we would call "First Name" in English) or preferred name
+- **name**: a character variable giving the full proper name of the restaurant
+- **location**: a character variable giving the location of the restaurant
+as "City, State", with state represented using the two-character state postal
+code
+- **cuisine**: a categorical variable describing the primary cuisine type of
+the restaurant. Possible options are:
+    - "American"
+    - "Chinese"
+    - "Dessert"
+    - "Fast Food" (including fast Mexican such as Chipotle)
+    - "Indian"
+    - "Italian"
+    - "Japanese" (including sushi)
+    - "Korean"
+    - "Mexican"
+    - "Pizza"
+    - "Thai"
+    - "Vietnamese"
+    - "Other"
+- **fav_dish**: a character variable describing student's favorite dish
+- **cost_per_person**: numeric variable describing approximate total amount in
+dollars, after tax in tip, that the student typically spends per person when
+visiting the restaurant
+- **yearly_visits**: numeric number of times student typically visits the
+restaurant in a given 12-month period. Use only whole numbers. If less than 1,
+round down to zero.
+- **last_visit**: character variable describing the last time the student
+visited the restaurant. Format as "YYYY-MM" with the four digit year and two
+digit month.
+
+Use the same format for your data dictionary.
+
+## Questionnaire Dictionary
+
+Create a data dictionary for the questions that you put on the board here in
+the RMarkdown file:
+
+
+
+## Dataset
+
+Construct 6 fake answers to the questions you posed in the questionnaire as a
+CSV file. Download the file, name it `questions.csv`, and put the file in the
+same location as this file.
+
+Now read the dataset into R:
+
+```{r}
+quest <- read_csv("questions.csv")
+```
+
+Modifying the code from one of the previous labs, create two plots of the data:
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+## Class data
+
+Download a new version of the class dataset and name it
+`class_restaurants_fixed.csv`. Read in the dataset into R:
+
+```{r}
+class <- read_csv("class_restaurants_fixed.csv")
+```
+
+Reproduce a bar plot of cuisine types.
+
+```{r}
+
+```
+
+How does this compare to the version you had from the last lab?
+
+**Answer**:
+
+
+Reproduce a scatter plot of year versus price:
+
+```{r}
+
+```
+
+How does this compare to the version you had from the last lab?
+
+**Answer**:
+
+## Submission
+
+Remember to submit your datasets as well as this completed file.
