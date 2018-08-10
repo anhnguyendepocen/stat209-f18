@@ -1,7 +1,7 @@
 ---
 title: "Class 01: Introduction to Statistics"
 author: "Taylor Arnold"
-output: html_notebook
+output: html
 ---
 
 
@@ -125,7 +125,7 @@ I've avoided projects from other 209 courses because we may
 re-use some of those datasets. However, the basic structure
 of the projects, particularly the first one, is very similar.
 
-# Syllabus
+## Syllabus
 
 Below I highlight some of the most important elements of the course syllabus.
 The full syllabus, which you should consult on your own, is posted on the 

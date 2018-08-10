@@ -1,0 +1,102 @@
+---
+title: "Lab 01: Introduction"
+output: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+```
+
+This is our first "lab" of the semester. Each will be structured similarly,
+with questions interwoven with code snippets. Note that they are numbered to
+align with the class number. You should put the completed lab in your GitHub
+repository ahead of the next class meeting.
+
+## Testing
+
+To start, let's just make sure R is running okay on your computer while 
+explaining the basic mechanism for using RMarkdown files. Below is a **code
+chunk**. Click the green run button to execute the code. The result should
+appear directly below.
+
+```{r}
+1 + 1
+```
+
+You can, and will, edit code chunks with your own R code. Use the chunk below
+to calculate the sum of 1 and 2 and execute the code.
+
+```{r}
+
+```
+
+In the RMarkdown labs you will also see within the text the words "Answer:".
+This indicates that you need to type into the document your answer to a 
+question. Here is an example already filled in.
+
+What does R think is the sum of 1 and 1?
+
+**Answer**: 2
+
+Now you try. What does R think is the sum of 1 and 2?
+
+**Answer**: 
+
+## Further set-up
+
+### Defaults
+
+We need to set up a few more things before we are ready to go. First let's
+reset some default in RStudio.
+
+- In the RStudio menu click on `Tools > Global Options...`
+- Look for the first drop-down: `Save the workspace to .RData on exit`
+- Change this first drop-down to `Never`
+- All of the check-boxes above this dropdown should be unchecked.
+
+Do not skip these steps as you will run into trouble later in the course.
+
+### Packages
+
+The final step is to download all of the R packages that we will
+need for the semester. It is generally easier to do these all at
+once rather than as we go along.
+
+To install the packages required for class, run the following lines
+of code in the console. There may be a warning about one or two
+packages not being available. Note that this may take 5-10 minutes
+to finish; on slower connections or older computers, it may take even
+longer. If you run into any problems, please let me know!
+
+```{r, eval = FALSE}
+pkgs <- c("dplyr", "ggplot2", "stringr", "ggmap", "ggrepel",
+          "devtools", "viridis", "plotly", "jsonlite", "lazyeval",
+          "knitr", "readr", "forcats")
+
+install.packages(pkgs,
+                 repos = "https://cloud.r-project.org",
+                 type = "binary",
+                 dependencies = TRUE,
+                 quiet = TRUE)
+```
+
+Now, you will also need install the `smodels` package. I have written
+this package for this course, so you need to install it in a slightly
+different way.
+
+```{r, eval = FALSE}
+devtools::install_github("statsmaths/smodels")
+```
+
+Once this is done you are all ready to hand in the first lab.
+
+## Submission
+
+You are now ready to submit the first lab. Save the file in RStudio through the
+menu interface (standard keyboard shortcuts work as well). Now, log into your
+GitHub account and drag the file into your repository. Make sure to then scroll
+to the bottom of the package and "commit" the file. You will have to do this
+for each assignment this semester.

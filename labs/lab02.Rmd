@@ -1,0 +1,70 @@
+---
+title: "Lab 02: Introduction to R and GitHub"
+output: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+```
+
+This second lab, due before the third class meeting, assumes that you have
+already installed the packages described in the first lab. You **must** run 
+the block of code above this text before running anything else. It loads
+packages that is used by the rest of the script.
+
+## A short example
+
+### Import and view the data
+
+The next step is to load a dataset into R. Next week will be spent
+talking about how to structure our own data; for today, we will work with some
+data that I have previously prepared:
+
+```{r, message = FALSE}
+births <- read_csv("https://statsmaths.github.io/stat_data/arbuthnot.csv")
+```
+
+Here, we are using the **function** `read_csv` to read in a dataset on my
+website. The `<-` symbol has saved this dataset as an **object** called
+`births`. Notice that the dataset appears in the environment pane in the upper
+right-hand corner of RStudio.
+
+The dataset here shows the number of children born in London on an annual
+basis, separated by their sex. Interactively in RStudio, you can see the data
+as a table by clicking on the table in the upper right-hand corner.
+
+What years are included in the study?
+
+**Answer**:
+
+Where/how do you think this data may have been collected?
+
+**Answer**:
+
+### Plots
+
+Now, let's visualize the dataset by constructing several different plots. We 
+will learn later how the plotting mechanism actually works. Today just run the
+code and enjoy.
+
+```{r}
+ggplot(births, aes(year, total)) +
+  geom_line()
+```
+
+Approximately how many children were born in London in 1701?
+
+**Answer**:
+
+What is one change you'd like to make to the way R has constructed the
+plot?
+
+**Answer**:
+
+## Submission
+
+Once you fill in your answers above, save the file and submit using GitHub just
+as you did with the first assignment.
