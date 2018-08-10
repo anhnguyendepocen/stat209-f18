@@ -34,7 +34,7 @@ exactly is involved in such an analysis. So, today, we will be
 looking at some online, interactive visualizations that we can
 explore without involving R or any data processing skills.
 
-### Types of data sets
+## Types of data sets
 
 When I talk about data I tend to think of a broader meaning to the
 term than some people might. Data can include such things as text:
@@ -53,7 +53,7 @@ And here, even one with sound:
 Today the projects groups will look at will cover a similarly wide range of
 data set types.
 
-### Exploratory data analysis
+## Exploratory data analysis
 
 What's the point an exploratory, visual analysis? At a high level we are
 trying to understand something about the world around us. The EDA phase of
@@ -70,7 +70,7 @@ If you are not familiar with the DSL, I encourage you to check out their
 projects and visit the group's space in the library. I plan to have
 someone from the DSL join us for a class later in the semester.
 
-### Modes of Analysis in EDA
+## Modes of Analysis in EDA
 
 Generally, when doing EDA we are looking at understanding patterns
 contained within the data. I tend see that interesting observations
@@ -89,7 +89,7 @@ decide which points to care about ahead of the analysis
 These do not function in a vacuum and good analyses will often pull
 from multiple types of observations.
 
-### Questions
+## Questions
 
 For today, here are some questions to answer about as we look at interactive
 visualizations:
@@ -101,7 +101,7 @@ visualizations:
 I'll answer these for the Forced Migration dataset, then let you work on these
 questions in small groups.
 
-### Groups
+## Groups
 
 Now, its your turn. I have gather several interactive visualizations
 that I find particularly interesting. You'll be split into groups of

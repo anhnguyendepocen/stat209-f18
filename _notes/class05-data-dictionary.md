@@ -12,10 +12,10 @@ output: html
 
 
 Today's goal is to follow up on our experiment in collecting data last week.
-We will formalize the concept of a data type and discuss the important and
-means of documenting data consistency.
+We will formalize the concept of a data type and discuss the importance of
+documenting data consistency.
 
-### Data Types
+## Data Types
 
 Variables (the columns in a data set) in R are each defined as belonging to
 a particular **data type**. When reading in a CSV file, R will make an
@@ -36,7 +36,7 @@ There are other data types that we will discuss later, including special
 formats for dates and times. Numeric and character types, however, will
 capture out needs for this week.
 
-### Activity: Questionnaire
+## Activity: Questionnaire
 
 For today we are going to split into groups of 2-3 people and construct six
 hypothetical questions that would want to ask someone for the following
@@ -56,7 +56,7 @@ answers (e.g., the answer is a single word), and longer character answers
 (e.g., the answer may be several sentences). Label each question as either
 being a numeric variable or a character variable.
 
-### Consistency
+## Consistency
 
 As we saw in class, it is important when collecting data to maintain a strict
 consistency between observations of the same variable. R forces our hand with
@@ -76,7 +76,7 @@ When possible and/or applicable, it is also best to describe the format of the
 data as well. For example, if a variable captures someones name does you want
 it formated "Given Name Family Name" or "Family Name, Given Name"?
 
-### Categorical Data
+## Categorical Data
 
 There is a special type of character variable that we will call
 **categorical**. These variables are distinguished from other character
@@ -102,7 +102,7 @@ available, it is considered best practice to use commonly accepted standards:
 In many cases these standardized lists will not exist, however, and you should
 simply use and document whatever codes make the most sense to you.
 
-### Data Dictionary
+## Data Dictionary
 
 We have just covered several things that need to be considered before
 collecting a dataset. A **data dictionary** is a written description
@@ -148,7 +148,7 @@ round down to zero.
 visited the restaurant. Format as "YYYY-MM" with the four digit year and two
 digit month.
 
-### Variable names
+## Variable names
 
 Before constructing our own data dictionaries, let's formalize the variable
 naming conventions I mentioned last time in class:
@@ -161,7 +161,7 @@ is okay, but `births2` is not)
 These variable rules apply to raw R objects (such as what we name the dataset
 as) as well as the variable names in a dataset.
 
-### Class dataset
+## Class dataset
 
 Update the information from the class dataset we collected last time to conform
 to the data dictionary I have provided. You will need this for the next lab.

@@ -11,7 +11,7 @@ output: html
 - 
 
 
-### Tabular data formats
+## Tabular data formats
 
 In this course we will store data in a tabular format.
 These tables will have **observations** stored in rows and
@@ -58,7 +58,7 @@ constitutes a row of the data is called a **unit of analysis**.
 Keeping in mind what the unit of analysis is will be very
 important as we think about how data is being used.
 
-### Comma separated values
+## Comma separated values
 
 The type of R object that stores such a dataset is called a
 **data frame**. Data frames store tabular data for us within R. We also
@@ -94,7 +94,7 @@ As we have seen, we can read a dataset using the `read_csv` function. The
 function either takes a URL, as we have above, or a path to the file on your
 computer. We will test out the second example now.
 
-### Activity: Data creation
+## Activity: Data creation
 
 We are now going to collect some data as a class. Specifically, you will each
 record information about your six favorite restaurants:
@@ -110,7 +110,7 @@ record information about your six favorite restaurants:
 Let's start by doing this individually in Google Sheets (I'll explain these
 steps in person). Once you are done, download the dataset as a CSV file.
 
-### Reading in a local file
+## Reading in a local file
 
 Once you have downloaded the file, rename it to `my_restaurants.csv`, and
 place it wherever you save your RMarkdown files. Then, download the fourth
@@ -121,7 +121,7 @@ lab here:
 Save the lab in the same location and open the file in RStudio. We will work
 on the first few questions together.
 
-### Combining the data
+## Combining the data
 
 It will be much more interesting if we can combine the data from everyone in
 the class. Use the links here to link into the collective Google Sheet and
@@ -133,7 +133,7 @@ Once we are finished with the, you will then download the entire class' data
 as a single file. Download it and name the file `class_restaurants.csv`. Load
 it into R as a dataset called `class`.
 
-### Consistency
+## Consistency
 
 Depending on how the class goes, we may find that there are inconsistencies in
 how the data is formatted from student to student. Of most importance is that
@@ -144,7 +144,7 @@ to adjust this.
 Next week we will dig deeper in to the specific types of data in R and how the
 effect our graphics and analyses.
 
-### New variables (time remaining)
+## New variables (time remaining)
 
 If we have time remaining, we will add additional variables to our dataset
 such as the latitude and longitude of the restaurant.

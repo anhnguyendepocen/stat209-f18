@@ -40,9 +40,9 @@ that you can install it for free on nearly any operating system.
 The notes here guide you through install the core R system, the
 RStudio IDE, and relevant R packages.
 
-## Setting up R
+# Setting up R
 
-### Download software
+## Download software
 
 The first step is to download the R programming language. To do
 this go to [https://cran.r-project.org/](https://cran.r-project.org/)
@@ -66,7 +66,7 @@ One you have the .pkg (macOS) or .exe (Windows) file,
 install this on your computer according to the default
 settings.
 
-### RStudio
+## RStudio
 
 The files we just downloaded are the core R language files
 doing all the hard work of processing data. Next, we'll
@@ -95,7 +95,7 @@ Now, install R or RStudio as you would any other program. It
 should link automatically to the version of R you just
 installed.
 
-## R Basics
+# R Basics
 
 Today we begin our study of using the R programming language to analyze
 data. There are two basic philosophies regarding how to teach R: (1) working
@@ -108,7 +108,7 @@ and generally leads to a better understanding of how to do statistical
 computing. Throughout the semester we will go back and fill in any remaining
 details as needed.
 
-### RMarkdown
+## RMarkdown
 
 We are going to work through the first lab together now. Click on the link
 below to download the file:

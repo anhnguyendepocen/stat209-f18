@@ -23,7 +23,7 @@ objectives for today.
 - Identify key elements of the course structure from the syllabus.
 - Inquire about any unclear points or potential concerns.
 
-## Course Description
+# Course Description
 
 This course broadly covers the entire process of collecting,
 cleaning, visualizing, modeling, and presenting datasets. It
@@ -36,14 +36,14 @@ analyzing, and writing about datasets from a variety of fields.
 You will be able to use these skills to address data-driven problems
 in a wide range of application domains.
 
-### John Tukey
+## John Tukey
 
 <img src="../assets/img/tukey.jpg" alt="Tukey" style="width: 200px;"/>
 
 - "The best thing about being a statistician is that
 you get to play in everyone's backyard."
 
-### About me
+## About me
 
 I am an *applied statistician*. A sampling of projects and datasets
 I have worked on include:
@@ -61,7 +61,7 @@ I have worked on include:
 
 We will talk about many of these projects throughout the semester.
 
-### Hans Rosling
+## Hans Rosling
 
 Hans Rosling's 200 Countries, 200 Years, 4 Minutes:
 
@@ -71,7 +71,7 @@ I have shown this to nearly all of my statistics courses, and while
 a bit dated it is still the best representation of what this course
 is all about.
 
-### NYTimes
+## NYTimes
 
 Of course, most of our arguments will be in a written form.
 For an example of that, see this NYTimes article *Gun homicides
@@ -82,7 +82,7 @@ falling from a ladder in the United States*:
 
 Notice how statistics is used as evidence in a larger arugment.
 
-### FiveThirtyEight
+## FiveThirtyEight
 
 Or, if you like sports, here is the 538 article *Steroids Probably
 Aren't Causing Baseball's Power Surge*:
@@ -93,7 +93,7 @@ I'll often give those of you interested in a particular subject
 (i.e., sports, economics, medicine) the chance to work with data
 that matches your interests.
 
-### Statistics in 209
+## Statistics in 209
 
 This course is truly about the holistic process of **doing**
 statistics. There will be very little mathematical content. For that,
@@ -104,7 +104,7 @@ sequence.
 what we will be covering. I believe you will find it interesting,
 fun, and incredibly useful.**
 
-### Data Analysis
+## Data Analysis
 
 If we are not doing much mathematics, what will we be doing?
 We will be covering the basic elements of data analysis:
@@ -119,7 +119,7 @@ the R programming language:
 It is freely available for all major operating systems and
 is pre-installed on many campus computers.
 
-### Prior projects
+## Prior projects
 
 To get an idea of the kinds of analysis we'll be working on
 here are two projects from other applied statitistics courses
@@ -132,13 +132,13 @@ I've avoided projects from other 209 courses because we may
 re-use some of those datasets. However, the basic structure
 of the projects, particularly the first one, is very similar.
 
-## Syllabus
+# Syllabus
 
 Below I highlight some of the most important elements of the course syllabus.
 The full syllabus, which you should consult on your own, is posted on the 
 course website.
 
-### Website
+## Website
 
 All of the materials and assignments for the course will be posted
 on the class website:
@@ -149,7 +149,7 @@ The website contains notes, assignment details, and
 supplemental materials. At the end of the semester, this version of
 the course will be archived and available for your reference.
 
-### Labs
+## Labs
 
 Most class meetings will have an assignment called a 'lab' associated with it.
 These consist of a set of questions that must be answered with either small
@@ -160,7 +160,7 @@ meeting. Labs are graded on a Pass/Fail scale.
 
 We will start with the first lab during the next class meeting.
 
-### Data Projects
+## Data Projects
 
 The ultimate aim of the course is to teach you how to *apply* statistics
 to real-world questions. To this end, you will complete three data-oriented
@@ -169,11 +169,11 @@ projects) will be shorter in length and consist in you collecting your own
 data. Your final project will be longer and will involve producing a tutorial
 to introduce a new concept in statistical modeling to your classmates.
 
-### Exams
+## Exams
 
 This course has no exams, final or otherwise.
 
-### Final Grades
+## Final Grades
 
 The final grade will be determined by weighting the labs and projects as
 follows:
@@ -189,7 +189,7 @@ Failing to fulfil these attendance requirements may result in a failing
 grade of 'V' or a reduction to your final course average at the instructor's
 sole discretion.
 
-### Course Policies
+## Course Policies
 
 The following class policies address some of the most common
 questions and concerns that students have. If anything is
