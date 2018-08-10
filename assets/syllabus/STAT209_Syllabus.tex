@@ -11,7 +11,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancyplain}
 \fancyhf{}
-\lfoot{As of 2018-08-02}
+\lfoot{As of 2018-08-09}
 \rfoot{page \thepage\ of \pageref{LastPage}}
 
 \setlength{\parindent}{0pt}
@@ -52,9 +52,16 @@ Office: & Jepson Hall, Room 218
 \textbf{Description:} \vspace{6pt}
 
 This course broadly covers the entire process of collecting,
-cleaning, visualizing, modeling, and presenting datasets. The focus
-is on applied statistics and data analysis rather than a detailed
-study of symbolic mathematics. It has a MATH designation but is not
+cleaning, visualizing, modeling, and presenting datasets. The goal is to
+develop skills needed to engage in the ethical and insightful analysis of
+data. This involves building technical proficiency, written and oral
+communication skills, and the ability to think critically about open ended
+tasks.
+
+\medskip
+
+Our focus will be on applied statistics and data analysis rather than a
+detailed study of symbolic mathematics. It has a MATH designation but is not
 a \textit{mathematics} course. By the end of the semester you will
 feel confident collecting, analyzing, and writing about datasets
 from a variety of fields. You will be able to use these skills to
@@ -92,85 +99,111 @@ all supporting files for your own machine via these links:
 \url{https://www.rstudio.com/}
 \end{center}
 The lab computers in Jepson are available and contain all of the
-required software. I strongly recommend, however, downloading these
-on your own machine so that you will be able to work on assignments
-without needing to work only in the computer lab.
+required software. You will, however, need to download these on your own
+machine as this semester we are not meeting in a computer lab. If this poses
+a challenge, please let me know during the first week of the semester.
+
+\bigskip
+
+\textbf{GitHub:} \vspace{6pt}
+
+All of your work for this semester will be submitted through GitHub,
+the same platform that hosts our website. You'll need to set up a free
+account, which we will cover during the week of class.
 
 \bigskip
 
 \textbf{Labs:} \vspace{6pt}
 
-Nearly every course meeting will have an associated lab to complete. We will
-usually work on these in class. By the start of the next course meeting, you
-must complete the questions contained within the lab notebook. Assignments
-will be submitted through GitHub; this process will explained in more detail
-during class. \\
-
-\bigskip
-
-\textbf{Midterm Exams:} \vspace{6pt}
-
-The course will have three in-class exams throughout the semester. These will
-resemble the daily lab assignments and will be administered on the computers
-in our classroom. Dates for these exams will be distributed roughly evenly
-throughout the first twelve weeks of the course:
-\begin{itemize}\setlength\itemsep{0em}
-\item \textbf{Midterm I}: 2018-09-20 (Thursday)
-\item \textbf{Midterm II}: 2018-10-23 (Tuesday)
-\item \textbf{Midterm III}: 2018-11-15 (Thursday)
-\end{itemize}
-The two weeks of class following Thanksgiving break will be focused on
-finishing and presenting your final data project.\\
+Most class meetings will have an assignment called a `lab' associated with it.
+These consist of a set of questions that must be answered with either small
+snippets of code or short descriptive answers. Often we will start these during
+class, though they may sometimes be just for your own practice. Your solutions
+must be uploaded to your GitHub page prior to the start of the next class
+meeting. Labs are graded on a Pass/Fail scale.
 
 \bigskip
 
 \textbf{Data Projects:} \vspace{6pt}
 
-While the midterms serve to make sure you are following along
-with the general concepts, the ultimate aim of the course is to teach
-you how to \textit{apply} statistics to real-world questions. To
-this end, you will also complete a final data-oriented project for the
-course. Details for this project and how it will be graded will be given
-towards the middle of the term. The final week of the course will consist
-of presentations of your findings.
+The ultimate aim of the course is to teach you how to \textit{apply} statistics
+to real-world questions. To this end, you will complete three data-oriented
+projects during the course of the semester. The first two (called `midterm'
+projects) will be shorter in length and consist in you collecting your own
+data. Your final project will be longer and will involve producing a tutorial
+to introduce a new concept in statistical modeling to your classmates.
+
+\bigskip
+
+\textbf{Exams:} \vspace{6pt}
+
+This course has no exams, final or otherwise.
 
 \bigskip
 
 \textbf{Final Grades:} \vspace{6pt}
 
-The final grade will be determined by weighting the labs, exams, and project
-as follows:
+The final grade will be determined by weighting the labs and projects as
+follows:
 \begin{itemize}\setlength\itemsep{0em}
 \item \textbf{Labs and Participation}: 20\%
-\item \textbf{Midterm Exams}: 60\% (20\% each)
-\item \textbf{Final Project}: 20\%
+\item \textbf{Midterm Projects}: 40\% (20\% each)
+\item \textbf{Final Project}: 40\%
 \end{itemize}
-Course expectations and community standards will be discussed, developed and
-distributed in the first week of the course. This will include policies for
-class participation, attendance, and late work.
+To pass the course, you must also miss no more than four class meetings.
+Attendance requires that you arrive on-time, complete any out of class
+assignments for the day, and fully engage with the course material.
+Failing to fulfil these attendance requirements may result in a failing
+grade of `V' or a reduction to your final course average at the instructor's
+sole discretion.
 
 \bigskip
 
-\textbf{Weekly Topics:} \vspace{6pt}
+\textbf{Class Policies:} \vspace{6pt}
 
-These are subject to change, but will give you a sense of what will be covered
-throughout the semester:
+The following class policies address some of the most common
+questions and concerns that students have. If anything is
+unclear, please feel free to contact me for clarification at
+any point in the semester.
+
 \begin{itemize}\setlength\itemsep{0em}
-\item Week 01: Introduction to Data Analysis % August 28, 30
-\item Week 02: Introduction to R and Data Construction % September 4, 6
-\item Week 03: Reproducible Research and Variable Types % September 11, 13
-\item Week 04: Review and MIDTERM I % September 18, 20
-\item Week 05: A Grammar for Data Visualization % September 25, 27
-\item Week 06: Annotating Graphics for Publication  % October 2, 4
-\item Week 07: Filtering and Mutating Data % October 9, 11
-\item Week 08: Summarizing Numeric Data  % October 16 (Fall Break), 18
-\item Week 09: Review and MIDTERM II % October 23, 25
-\item Week 10: Statistical Inference %  % October 30, November 1
-\item Week 11: Joining and Reshaping Data % November 6, 8
-\item Week 12: Review and MIDTERM III % November 13, 15
-%\item Week 13: Thanksgiving Break % November 20 (Thanksgiving)
-\item Week 13: Final Project Consultations % November 27, 29
-\item Week 14: Final Project Presentations % December 4, 6
+\item \textbf{Academic honesty:} Cheating and plagiarism are grave scholarly
+offenses and potential grounds
+for expulsion; they are also a major barrier to your intellectual development.
+You are expected to familiarize yourself with the entirety of the
+University of Richmond’s Honor Code. If you are confused or unsure about
+appropriate citation protocol or any other aspect of the Honor code,
+please consult me before turning in an assignment.
+\item \textbf{Special approval:} If you have special approval forms for extra
+time on exams or any other circumstances I should know about, please speak
+with me as early as possible so that we can best accommodate your needs.
+\item \textbf{Late work:} You are expected to submit all work on-time. Late 
+data analysis reports will be accepted after the due date with a full letter
+grade deduction for each 24 hour period it is late (rounded up).
+\item \textbf{Attendance:} You are expected to both attend and participate in most
+class meetings. If you must be absent due to illness or other pressing
+need, please let me know by email as soon as possible. A habit of arriving
+late, failing to participate, or failing to accomplish any out of class assignments
+is considered equivalent to an absence.
+\item \textbf{Make-up work:} In instances where students have a valid excuse for
+missing an assessment, please get in touch with me within 24-hours of missing
+class to make alternative arrangements.
+\item \textbf{Class conduct:} During class I expect you to refrain from checking
+email, being on phones, or working on assignments for other classes.
+\item \textbf{Computers:} I except you to bring a working laptop with R and 
+RStudio installed. If this poses a challenge, please speak with me at the 
+start of the semester or as new problems arise.
+\item \textbf{Office hours}: Rather than fixed weekly office hours, I will 
+provide blocks of open times to meet with me particularly focused around
+project due dates. If you find me in my office, poke your head in and I
+am usually happy to meet on the spot. Otherwise, please email me to make an
+appointment so that we can chat. Please note that appointments should
+be booked at least 24 hours ahead of time.
+\item \textbf{Email:} I will also answer questions by email (it can, in fact,
+be much faster than scheduling an appointment for small issues). During the
+week, I aim to respond within 24 hours, with emails sent over the weekend
+responded to by Monday morning. If your question involves code, please attach
+your current lab or report as that will expedite my answering your question(s).
 \end{itemize}
 
 \bigskip

@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage[top=1.5cm,bottom=2cm,left=2cm,right= 2cm]{geometry}
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}            
+\usepackage{multirow}    
+\usepackage{multicol}    
+\usepackage{changepage}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{ulem}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancyplain}
+\fancyhf{}
+
+\usepackage{xcolor}
+
+\definecolor{oiB}{rgb}{.337,.608,.741}
+\definecolor{oiR}{rgb}{.941,.318,.200}
+\definecolor{oiG}{rgb}{.298,.447,.114}
+\definecolor{oiY}{rgb}{.957,.863,0}
+
+\definecolor{light}{rgb}{.337,.608,.741}
+\definecolor{dark}{rgb}{.337,.608,.741}
+
+\usepackage[colorlinks=false,pdfborder={0 0 0},urlcolor= dark,colorlinks=true,linkcolor=black]{hyperref}
+
+\newcommand{\light}[1]{\textcolor{light}{\textbf{#1}}}
+\newcommand{\dark}[1]{\textcolor{dark}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+
+
+\date{2018-07-01}                                           % Activate to display a given date or no date
+
+%
+
+\begin{document}
+
+{\Large \textcolor{oiB}{
+Class 01: Course Introduction
+\hfill Learning Objectives}} \\
+
+\textbf{Name:} \underline{\hspace{6cm}} \\
+
+I plan to hand out a sheet similar to this one each day of class listing the
+learning objectives for the day. Below the line is where you will answer the
+end-of-lecture questions. Make sure to fill in your name as you will be
+handing these in for a pass/fail grade during class.
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+\renewcommand\labelenumi{\textcolor{light}{\textbf{LO \theenumi.}}}
+
+\item Identify key elements of the course structure from the syllabus. Inquire
+about any unclear points or potential concerns.
+
+\item Record dates of exams, due-dates for projects/essays, and location of
+resources such as the course website and office hours.
+
+\item Describe at a high-level the three components of the data analysis
+pipeline.
+
+\item Install \textbf{R} and \textbf{RStudio} on your laptop computer.
+Communicate any difficulty you have with this process.
+
+\end{enumerate}
+
+\noindent\makebox[\linewidth]{\rule{1.1\textwidth}{0.4pt}}
+
+
+
+\end{document}
