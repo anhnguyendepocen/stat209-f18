@@ -114,7 +114,7 @@ It will be much more interesting if we can combine the data from everyone in
 the class. Use the links here to link into the collective Google Sheet and
 add your data to the appropriate sheet:
 
-- [Favorite Restaurants](https://docs.google.com/spreadsheets/d/)
+- [Favorite Restaurants](https://docs.google.com/spreadsheets/d/10LFQMcRRBiRXEauX1aUfv3dYhiJ4zS616BwyDnXC3kc/edit?usp=sharing)
 
 Once we are finished with the, you will then download the entire class' data
 as a single file. Download it and name the file `class_restaurants.csv`. Load
