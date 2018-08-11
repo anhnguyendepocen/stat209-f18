@@ -38,18 +38,36 @@ With the following variables:
     - rooibos
     - white
 - score: user rated score; from 0 to 100
-- price: estimated price of one cup of tea
+- price: estimated price of one cup of tea in cents
 - num_reviews: total number of online reviews
 
-Draw a scatterplot with num_reviews (x-axis) against score (y-axis) and add a
-best fit line.
+Draw a scatter plot with num_reviews (x-axis) against score (y-axis):
 
 ```{r}
 
 ```
 
+Now add a best fit line to the scatter plot:
+
+```{r}
+
+```
+
+
 Does the score tend to increase, decrease, or remain the same as the number
 of reviews increases?
 
 **Answer**:
+
+Create a text plot with score (x-axis) against price (y-axis). What is the 
+most expensive tea in the data? 
+
+**Answer**:
+
+Which tea has the lowest score? Does it have a high price per cup?
+
+**Answer**:
+
+
+
 
