@@ -50,7 +50,7 @@ To illustrate these points, let's look at a subset of the data that Hans
 Roslin used in the video I showed on the first day of class. It contains just
 a single year of the data (2007).
 
-```{r}
+```{r, message=FALSE}
 gapminder_2007 <- read_csv("https://statsmaths.github.io/stat_data/gapminder_2007.csv")
 gapminder_2007
 ```
@@ -142,7 +142,7 @@ ggplot(gapminder_2007, aes(continent, life_exp)) +
   geom_mean()
 ```
 
-### Facets
+## Facets
 
 A special layer type within the **ggplot2** framework, facets allow us
 to produce many small plots for each value of a character variable. It
@@ -161,7 +161,7 @@ can do this by adding the option `scales="free"`:
 ```{r, message = FALSE}
 ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point() +
-  facet_wrap(~continent, scales = "free") + scale_color_viridis(option = "A")
+  facet_wrap(~continent, scales = "free")
 ```
 
 There are also options `scales="free_x"` and `scales="free_y"` if you

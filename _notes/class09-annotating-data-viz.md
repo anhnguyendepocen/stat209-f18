@@ -25,20 +25,6 @@ For today's notes, we will once again use the `gapminder_2007` dataset:
 gapminder_2007 <- read_csv("https://statsmaths.github.io/stat_data/gapminder_2007.csv")
 {% endhighlight %}
 
-Here is a plot showing several of the ways that layers and aesthetics can
-be used to construct an informative visualization:
-
-
-{% highlight r %}
-ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
-  geom_point(aes(size = pop))
-{% endhighlight %}
-
-<img src="../assets/class09-annotating-data-viz/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" />
-
-I have changed the size of the points to scale with the population, but the
-color of the points is set to a fixed value.
-
 ## Labels
 
 We can add labels to the plot by adding new layers to the plot:
@@ -60,7 +46,7 @@ ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
   ggtitle("Macroeconomic variables by country (2007)")
 {% endhighlight %}
 
-<img src="../assets/class09-annotating-data-viz/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
+<img src="../assets/class09-annotating-data-viz/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" />
 
 Do not feel that you need to add complex labels to plots as we are doing
 an exploratory analysis. However, when presenting plots in a report these
@@ -109,7 +95,7 @@ ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
   annotate("point", x = 51736, y = 79.1, color = "red", size = 3)
 {% endhighlight %}
 
-<img src="../assets/class09-annotating-data-viz/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
+<img src="../assets/class09-annotating-data-viz/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
 
 Similarly, I could label the US on the plot:
 
@@ -120,7 +106,7 @@ ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
   annotate("text", x = 42950, y = 76.7, label = "USA")
 {% endhighlight %}
 
-<img src="../assets/class09-annotating-data-viz/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
+<img src="../assets/class09-annotating-data-viz/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
 
 Or, highlight the healthy and wealthy part of the plot:
 
@@ -135,7 +121,7 @@ ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
            label = "Healthiest and Wealthiest Countries")
 {% endhighlight %}
 
-<img src="../assets/class09-annotating-data-viz/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
+<img src="../assets/class09-annotating-data-viz/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
 
 Notice here that I set the aesthetics `fill` (that the filled color
 of the rectangle) and `alpha` (how opaque the rectangle is); I also

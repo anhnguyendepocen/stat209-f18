@@ -40,7 +40,7 @@ To illustrate how this works, today we will explore a dataset of the every
 commercial flight that departed from New York City in 2013 (we'll use this
 many times as it is a great teaching sample):
 
-```{r}
+```{r, message=FALSE}
 flights <- read_csv("https://statsmaths.github.io/stat_data/flights.csv")
 flights
 ```

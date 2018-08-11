@@ -30,38 +30,6 @@ many times as it is a great teaching sample):
 
 {% highlight r %}
 flights <- read_csv("https://statsmaths.github.io/stat_data/flights.csv")
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Parsed with column specification:
-## cols(
-##   year = col_integer(),
-##   month = col_integer(),
-##   day = col_integer(),
-##   dep_time = col_integer(),
-##   sched_dep_time = col_integer(),
-##   dep_delay = col_integer(),
-##   arr_time = col_integer(),
-##   sched_arr_time = col_integer(),
-##   arr_delay = col_integer(),
-##   carrier = col_character(),
-##   flight = col_integer(),
-##   tailnum = col_character(),
-##   origin = col_character(),
-##   dest = col_character(),
-##   air_time = col_integer(),
-##   distance = col_integer(),
-##   hour = col_integer(),
-##   minute = col_integer(),
-##   time_hour = col_datetime(format = "")
-## )
-{% endhighlight %}
-
-
-
-{% highlight r %}
 flights
 {% endhighlight %}
 

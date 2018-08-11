@@ -20,24 +20,6 @@ the first day of class.
 
 {% highlight r %}
 gapminder_2007 <- read_csv("https://statsmaths.github.io/stat_data/gapminder_2007.csv")
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Parsed with column specification:
-## cols(
-##   country = col_character(),
-##   continent = col_character(),
-##   life_exp = col_double(),
-##   pop = col_integer(),
-##   gdp_per_cap = col_double()
-## )
-{% endhighlight %}
-
-
-
-{% highlight r %}
 gapminder_2007
 {% endhighlight %}
 

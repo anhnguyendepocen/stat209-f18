@@ -40,24 +40,6 @@ a single year of the data (2007).
 
 {% highlight r %}
 gapminder_2007 <- read_csv("https://statsmaths.github.io/stat_data/gapminder_2007.csv")
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Parsed with column specification:
-## cols(
-##   country = col_character(),
-##   continent = col_character(),
-##   life_exp = col_double(),
-##   pop = col_integer(),
-##   gdp_per_cap = col_double()
-## )
-{% endhighlight %}
-
-
-
-{% highlight r %}
 gapminder_2007
 {% endhighlight %}
 
@@ -185,7 +167,7 @@ ggplot(gapminder_2007, aes(continent, life_exp)) +
 
 <img src="../assets/class07-grammar-of-graphics/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
 
-### Facets
+## Facets
 
 A special layer type within the **ggplot2** framework, facets allow us
 to produce many small plots for each value of a character variable. It
@@ -208,14 +190,10 @@ can do this by adding the option `scales="free"`:
 {% highlight r %}
 ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point() +
-  facet_wrap(~continent, scales = "free") + scale_color_viridis(option = "A")
+  facet_wrap(~continent, scales = "free")
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## Error in scale_color_viridis(option = "A"): could not find function "scale_color_viridis"
-{% endhighlight %}
+<img src="../assets/class07-grammar-of-graphics/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
 
 There are also options `scales="free_x"` and `scales="free_y"` if you
 would like to only allow one axis to change.
