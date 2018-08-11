@@ -223,15 +223,6 @@ that the model is describing a large proportion of the variation in the response
 Notice that the R-squared value is always equal to 0 for a simple model with just a single
 mean.
 
-### Practice
-
-We will work on the next lab for the remainder of the class:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab19.Rmd" download="lab19.Rmd" target="_blank">lab19.Rmd</a>
-
-Please upload your script to GitHub ahead of the next class.
-
-
-
 
 
 

@@ -202,14 +202,6 @@ reg_table(model, level = 0.95)
 Unless we have a specific reason to use a different level, we will
 usually use a 95% confidence interval in this course.
 
-### Practice
-
-We will work on the next lab for the remainder of the class:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab18.Rmd" download="lab18.Rmd" target="_blank">lab18.Rmd</a>
-
-Please upload your script to GitHub ahead of the next class.
-
-
 
 
 

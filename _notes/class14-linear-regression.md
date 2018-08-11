@@ -177,16 +177,6 @@ ggplot(msleep, aes(sleep_rem, awake)) +
 
 As you can see, the predicted values all line along a single line.
 
-### Practice
-
-We will work on the next lab for the remainder of the class:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab20.Rmd" download="lab20.Rmd" target="_blank">lab20.Rmd</a>
-
-Please upload your script to GitHub ahead of the next class.
-
-
-
-
 
 
 

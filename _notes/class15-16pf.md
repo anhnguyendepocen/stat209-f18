@@ -21,15 +21,6 @@ factors*. Start by (quickly) taking the test yourself:
 See the Wikipedia page [16PF Questions](https://en.wikipedia.org/wiki/16PF_Questionnaire)
 For more details.
 
-### Practice
-
-To work through the dataset, we will start today by working on the following
-lab:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab21.Rmd" download="lab21.Rmd" target="_blank">lab21.Rmd</a>
-
-Please upload your script to GitHub ahead of the next class.
-
-
 
 
 

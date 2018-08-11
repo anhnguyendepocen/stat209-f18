@@ -39,21 +39,7 @@ Thank you all again for filling out the mid-course review forms. They were
 very helpful for me in planning the notes for the remainder of the semester.
 Some themes I saw:
 
-- generally happy with the format of the quizzes and the notes 🗒️ I provide
-- generally enjoy the short lecture followed by working on labs and projects
-- you like using your own computer 💻
-- enjoy working on the projects in class
-- a desire for more practice problems and labs 🔬
-- almost no comments on the pace 🏃 of the course (so I assume its good!)
-- some clarity on what is expected on the project drafts
-- request for more office hours ⏰ right before the projects are due
-
-It did not seem that there was a pattern of many other concerns (yay!). I've
-tried to add a little bit more practice to the labs, but mostly kept the
-format of the course consistent with what we have been doing lately. I'll try
-to clarify a bit more what is expected on the Project D drafts (there are no
-drafts for C). Also, I will have and announce extra office hours before the
-next assignment.
+- 
 
 Additionally, I did take other one-off comments that were made under
 consideration even if not listed here. If you have any other comments or
@@ -278,13 +264,4 @@ of the points:
 ggplot(msleep, aes(vore, awake)) +
   geom_violin()
 ```
-
-### Practice
-
-We will work on the next lab for the remainder of the class:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab17.Rmd" download="lab17.Rmd" target="_blank">lab17.Rmd</a>
-
-Please upload your script to GitHub ahead of the next class.
-
-
 

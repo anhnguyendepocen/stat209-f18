@@ -153,6 +153,13 @@ meeting. Labs are graded on a Pass/Fail scale.
 
 We will start with the first lab during the next class meeting.
 
+## Exams
+
+There will be three take-home midterm exams given throughout the semester.
+These are open notes and resources, though you must complete them on your
+own. The exam will be made available in class and you will have 24-hours to
+complete it. The course has no final exam.
+
 ## Data Projects
 
 The ultimate aim of the course is to teach you how to *apply* statistics
@@ -162,18 +169,14 @@ projects) will be shorter in length and consist in you collecting your own
 data. Your final project will be longer and will involve producing a tutorial
 to introduce a new concept in statistical modeling to your classmates.
 
-## Exams
-
-This course has no exams, final or otherwise.
-
 ## Final Grades
 
 The final grade will be determined by weighting the labs and projects as
 follows:
 
 - **Labs and Participation**: 20%
-- **Midterm Projects**: 40% (20% each)
-- **Final Project**: 40%
+- **Midterm Exams**: 30% (10% each)
+- **Projects**: 60% (15% each)
 
 To pass the course, you must also miss no more than four class meetings.
 Attendance requires that you arrive on-time, complete any out of class
@@ -235,4 +238,9 @@ me for clarification at any point in the semester.
 Please bring a laptop with an updated version of your operating system to our
 next class meeting. If this is not possible please stick around and speak with
 me at the end of the class.
+
+## Questions
+
+As a last task for today, please complete the brief questionnaires I am handing
+out.
 
