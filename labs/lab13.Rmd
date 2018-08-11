@@ -1,0 +1,152 @@
+---
+title: "Lab 13: Inference for Several Means"
+output: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(forcats)
+library(ggplot2)
+library(dplyr)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+
+## Burrito synergy in SoCal
+
+Today we will look at a dataset of reviews of burritos in southern
+California. This is a data set collected by a group of college friends who
+live in the greater San Diego area.
+
+```{r}
+burrito <- read_csv("https://statsmaths.github.io/stat_data/burrito.csv")
+```
+
+The available variables in the data are:
+
+- location: the name of the restaurant
+- cost: total cost for the burrito
+- yelp: the average Yelp review score
+- google: the average Google review score
+- chips_included: equals 1 if chips are included with the burrito
+- hunger: score from 1 to 5 on how much the burrito filled up the reviewer
+- tortilla: rating from reviewer; 1 (terrible) to 5 (awesome)
+- temp: rating from reviewer; 1 (terrible) to 5 (awesome)
+- meat: rating from reviewer; 1 (terrible) to 5 (awesome)
+- fillings: rating from reviewer; 1 (terrible) to 5 (awesome)
+- meat_filling: rating from reviewer; 1 (terrible) to 5 (awesome)
+- uniformity: rating from reviewer; 1 (terrible) to 5 (awesome)
+- salsa: rating from reviewer; 1 (terrible) to 5 (awesome)
+- synergy: rating from reviewer; 1 (terrible) to 5 (awesome)
+- wrap: rating from reviewer; 1 (terrible) to 5 (awesome)
+- overall: rating from reviewer; 1 (terrible) to 5 (awesome)
+- lat: latitude (in degrees North) of the taco restaurant
+- lon: longitude (in degrees East) of the taco restaurant
+
+Fit a linear regression predicting the average yelp score of locations in this
+dataset and look at the model using `reg_table`:
+
+```{r}
+
+```
+
+
+The average Yelp score of all restaurants in this area is just 3.7; looking
+at the confidence interval from the model does it seem likely that burrito
+locations have a higher Yelp rating than locations in general, or is this
+just noise in the data?
+
+**Answer**:
+
+The regression model confidence interval requires that the data are sampling
+independently from the larger population. Why might this dataset not hold to
+this assumption?
+
+**Answer**:
+
+Now fit a linear regression that predicts the yelp score as a function of
+whether the burrito includes chips.
+
+```{r}
+
+```
+
+Describe what the slope coefficient in the previous model really means
+in terms of the data:
+
+**Answer**:
+
+Is the slope coefficient statistically significant (compared to zero)?
+
+**Answer**:
+
+Describe this in terms of your answers above.
+
+**Answer**:
+
+The word *synergy* can be defined as:
+
+> the interaction or cooperation of two or more organizations, substances,
+> or other agents to produce a combined effect greater than the sum of
+> their separate effects.
+
+This is not something I would have thought of when considering tacos, but
+let's see how synergy effected the scores of both the reviewers as well as
+Google and Yelp users in general.
+
+First, I'll add a variable called high_synergy defined as whether the synergy
+score is greater than 3.5.
+
+```{r}
+burrito$high_synergy <- (burrito$synergy > 3.5)
+```
+
+Fit a regression predicting the Yelp score as a function of the
+variable `high_synergy`.
+
+```{r}
+
+```
+
+Is there strong evidence that Yelp scores are higher for high synergy burrito
+restaurants?
+
+**Answer**:
+
+Now fit a regression predicting the overall score as a function of the
+variable high_synergy.
+
+```{r}
+
+```
+
+Is there evidence that high synergy burrito locations have a higher overall
+score than low synergy burrito locations?
+
+**Answer**:
+
+Using the model from the previous question, what does the model predict
+will be the overall score of a location with low synergy?
+
+**Answer**:
+
+What does the model predict will be the overall score of a location with
+high synergy?
+
+**Answer**:
+
+Finally, fit a regression model that predicts the overall score as a function
+of the variable `synergy` coded as a factor.
+
+```{r}
+
+```
+
+What does the model predict the overall score for a restaurant with a
+synergy score of 3 will be?
+
+**Answer**:
+
+
