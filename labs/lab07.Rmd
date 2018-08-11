@@ -68,6 +68,22 @@ Which tea has the lowest score? Does it have a high price per cup?
 
 **Answer**:
 
+Create a scatter plot of with num_reviews (x-axis) against score (y-axis) and
+a facet by tea type:
+
+```{r}
+
+```
+
+Repeat the above plot but allow the scales to be free:
 
 
+```{r}
+
+```
+
+Which of the two facet plots do you find more readable and why? (Hint: there is
+not a right answer here)
+
+**Answer**:
 
