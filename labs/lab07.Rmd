@@ -1,0 +1,55 @@
+---
+title: "Lab 07: Grammar of Graphics"
+output: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+## Tea Reviews
+
+Next, we will take another look at a dataset of tea reviews that I used in
+a previous lecture:
+
+```{r}
+tea <- read_csv("https://statsmaths.github.io/stat_data/tea.csv")
+```
+
+With the following variables:
+
+- name: the full name of the tea
+- type: the type of tea. One of:
+    - black
+    - chai
+    - decaf
+    - flavors
+    - green
+    - herbal
+    - masters
+    - matcha
+    - oolong
+    - pu_erh
+    - rooibos
+    - white
+- score: user rated score; from 0 to 100
+- price: estimated price of one cup of tea
+- num_reviews: total number of online reviews
+
+Draw a scatterplot with num_reviews (x-axis) against score (y-axis) and add a
+best fit line.
+
+```{r}
+
+```
+
+Does the score tend to increase, decrease, or remain the same as the number
+of reviews increases?
+
+**Answer**:
+

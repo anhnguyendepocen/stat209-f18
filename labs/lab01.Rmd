@@ -8,6 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readr)
 library(ggplot2)
 library(dplyr)
+theme_set(theme_minimal())
 ```
 
 This is our first "lab" of the semester. Each will be structured similarly,
@@ -74,7 +75,7 @@ longer. If you run into any problems, please let me know!
 ```{r, eval = FALSE}
 pkgs <- c("dplyr", "ggplot2", "stringr", "ggmap", "ggrepel",
           "devtools", "viridis", "plotly", "jsonlite", "lazyeval",
-          "knitr", "readr", "forcats")
+          "knitr", "readr", "forcats", "Hmisc")
 
 install.packages(pkgs,
                  repos = "https://cloud.r-project.org",

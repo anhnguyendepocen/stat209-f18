@@ -1,0 +1,78 @@
+---
+title: "Lab 06: Tidy Data"
+output: html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+To start, create a new dataset with two variables:
+
+- **cuisine**: one row for each of the restaurant types in the class dataset: 
+    - "American"
+    - "Chinese"
+    - "Dessert"
+    - "Fast Food" (including fast Mexican such as Chipotle)
+    - "Indian"
+    - "Italian"
+    - "Japanese" (including sushi)
+    - "Korean"
+    - "Mexican"
+    - "Pizza"
+    - "Thai"
+    - "Vietnamese"
+    - "Other"
+- **score**: your personal rating of this cuisine type on a scale from 1 (hate
+it) to 10 (love it)
+
+Store, download, and save this as a file called `cuisine_rating.csv`. 
+
+# Join tidy data
+
+Now read in the dataset `class_restaurants_fixed.csv` into R:
+
+```{r}
+class <- read_csv("class_restaurants_fixed.csv")
+```
+
+As well as the new dataset you created:
+
+```{r}
+rating <- read_csv("cuisine_rating.csv")
+```
+
+Now, use the `left_join` function to join the class dataset (first entry) to 
+the rating dataset (second entry). Save the result as a dataset named
+`class_new`. (Hint: see the lecture notes for help with this)
+
+```{r}
+
+```
+
+Run the following code to produce a graphic of how each student's picks 
+correspond to your ratings. We will talk more about the specifics in a few
+weeks.
+
+```{r}
+ggplot(class_new, aes(student_name, rating)) +
+    geom_mean() +
+    coord_flip() +
+    xlab("Student Name") + 
+    ylab("Average Ranking")
+```
+
+Is the highest average score your own? If not, how many students have a higher
+ranking for your preferences than you do?
+
+**Answer**:
+
+## Submission
+
+Remember to submit your dataset `cuisine_rating.csv` as well as this completed
+file.
