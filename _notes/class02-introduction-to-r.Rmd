@@ -32,14 +32,6 @@ Next, follow this link and accept the invitation:
 Assuming you have a valid GitHub account, this will set up a repository where
 all of your projects for this semester should be posted.
 
-In class, you will be using the lab computers to work with
-the R programming language. I strongly suggest that you also
-setup R on your own machine for working with the homework and
-data reports. R is an open source programming language, meaning
-that you can install it for free on nearly any operating system.
-The notes here guide you through install the core R system, the
-RStudio IDE, and relevant R packages.
-
 # Setting up R
 
 ## Download software
