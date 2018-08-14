@@ -1,6 +1,6 @@
 ---
 title: "Lab 01: Introduction"
-output: html
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

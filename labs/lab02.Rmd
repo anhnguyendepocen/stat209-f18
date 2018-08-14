@@ -1,6 +1,6 @@
 ---
 title: "Lab 02: Introduction to R and GitHub"
-output: html
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

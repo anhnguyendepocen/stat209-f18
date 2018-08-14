@@ -1,6 +1,6 @@
 ---
 title: "Lab 07: Grammar of Graphics"
-output: html
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

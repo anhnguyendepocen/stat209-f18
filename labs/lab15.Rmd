@@ -1,6 +1,6 @@
 ---
 title: "Lab 15: Sixteen Personality Factors I"
-output: html
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

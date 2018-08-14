@@ -1,6 +1,6 @@
 ---
 title: "Lab 13: Inference for Several Means"
-output: html
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

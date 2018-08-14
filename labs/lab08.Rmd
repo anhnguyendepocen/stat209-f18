@@ -1,6 +1,6 @@
 ---
 title: "Lab 08: Aesthetic Mappings"
-output: html
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
