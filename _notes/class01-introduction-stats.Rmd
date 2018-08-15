@@ -178,7 +178,7 @@ projects during the course of the semester.
 The final grade will be determined by weighting the labs and projects as
 follows:
 
-- **Labs and Participation**: 20%
+- **Labs and Participation**: 10%
 - **Midterm Exams**: 30% (10% each)
 - **Projects**: 60% (15% each)
 
