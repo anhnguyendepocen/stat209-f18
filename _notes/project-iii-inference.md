@@ -3,21 +3,14 @@ title: "Project III: Data Collection Inference"
 author: "Taylor Arnold"
 ---
 
-**Due**: 2018-04-10 (start of class)
+**Due**: 2018-11-27 (start of class)
 
-**Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project-c.Rmd" download="project-c.Rmd" target="_blank">project-c.Rmd</a>
+**Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/projects/project-iii.Rmd" download="project-iii.Rmd" target="_blank">project-iii.Rmd</a>
 
-**Rubric**: [project-c-rubric.csv](https://github.com/statsmaths/stat209/blob/master/projects/project-c-rubric.csv)
-
-**Questions deadline**:  2018-04-09; 5pm (Monday) - If you would like help
-with the project, please see/e-mail me before this deadline. After this time
-I will only help with technical issues, such as R crashing or GitHub being
-down.
+**Rubric**: [project-c-rubric.csv](https://github.com/statsmaths/stat209/blob/master/projects/project-iii-rubric.csv)
 
 The goal of this project is collect a dataset with the intent of conducting
-two questions of statistical inference. The writing component of this project
-will be differ from the others as well will be practicing the writing of a
-statistical report.
+two questions of statistical inference. 
 
 You need to collect a dataset with at least 100 observations, which includes
 three variables:
@@ -57,6 +50,6 @@ effect than the one you expected. Write several sentences putting these
 results into context (what do the confidence intervals and point estimators
 mean in practice?).
 
-As with Project B, make sure that none of the code, warnings, or data are
+As with Project II, make sure that none of the code, warnings, or data are
 shown in the final report. It should contain only text, graphics, and output
 from the function `reg_table`.

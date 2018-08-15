@@ -9,7 +9,7 @@ author: "Taylor Arnold"
 
 **Data dictionary**: [acs-data-dictionary](https://statsmaths.github.io/stat209-f18/notes/acs-dictionary)
 
-**Rubric**: [project-b-rubric.csv](https://github.com/statsmaths/stat209-f18/blob/master/projects/project-b-rubric.csv)
+**Rubric**: [project-b-rubric.csv](https://github.com/statsmaths/stat209-f18/blob/master/projects/project-ii-rubric.csv)
 
 The overarching goal of this project is to tell an interesting narrative about
 the demographics of a particular metropolitan area in the United States. The
@@ -33,15 +33,10 @@ of the data
 
 The final report should contain **exactly three visualizations**. This means
 that you should take care to make each visualization as information dense as
-possible. Aim to have a final report around 500 words. The word length is
+possible. Aim to have a final report around 250-500 words. The word length is
 not a hard limit; it is just a guidelines to indicate the expected length
 of the report. All of the plots should be integrated into the essay in a
 meaningful way rather than all included at the start or end of the essay.
-Finally, you must have a completed draft ready in class on 2018-03-06. We
-will be reviewing drafts in class; **the drafts must have completely satisfied
-the requirements of the assignment**. Students who have not completed these
-will receive deductions in the grading rubric. Also, note that the project
-must be properly named as: `project-b.Rmd` and `project-b.html`.
 
 The grade for the assignment depends primarily on the effectiveness of the
 graphics in conveying information, the quality of the writing, and execution
