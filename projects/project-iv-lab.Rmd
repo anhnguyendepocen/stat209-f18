@@ -1,0 +1,13 @@
+---
+title: "Final Project Lab"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+theme_set(theme_minimal())
+```
+

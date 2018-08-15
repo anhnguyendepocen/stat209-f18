@@ -5,11 +5,11 @@ author: "Taylor Arnold"
 
 **Due**: 2018-10-18 (start of class)
 
-**Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/projects/project-b.Rmd" download="project-b.Rmd" target="_blank">project-b.Rmd</a>
+**Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/projects/project-ii.Rmd" download="project-ii.Rmd" target="_blank">project-ii.Rmd</a>
 
 **Data dictionary**: [acs-data-dictionary](https://statsmaths.github.io/stat209-f18/notes/acs-dictionary)
 
-**Rubric**: [project-b-rubric.csv](https://github.com/statsmaths/stat209-f18/blob/master/projects/project-ii-rubric.csv)
+**Rubric**: [project-ii-rubric.csv](https://github.com/statsmaths/stat209-f18/blob/master/projects/project-ii-rubric.csv)
 
 The overarching goal of this project is to tell an interesting narrative about
 the demographics of a particular metropolitan area in the United States. The
