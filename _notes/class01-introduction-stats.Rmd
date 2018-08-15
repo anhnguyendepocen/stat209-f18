@@ -170,11 +170,8 @@ complete it. The course has no final exam.
 ## Data Projects
 
 The ultimate aim of the course is to teach you how to *apply* statistics
-to real-world questions. To this end, you will complete three data-oriented
-projects during the course of the semester. The first two (called 'midterm'
-projects) will be shorter in length and consist in you collecting your own
-data. Your final project will be longer and will involve producing a tutorial
-to introduce a new concept in statistical modeling to your classmates.
+to real-world questions. To this end, you will complete four data-oriented
+projects during the course of the semester. 
 
 ## Final Grades
 
