@@ -1,0 +1,101 @@
+---
+title: "Lab 04: Data Basics"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+theme_set(theme_minimal())
+```
+
+This lab assumes that you have downloaded and renamed a file called
+`my_restaurants.csv` and placed in the same location as this RMarkdown
+file.
+
+## Reading in a local file
+
+You can read the csv file in with the following code:
+
+```{r, eval = FALSE}
+mine <- read_csv("my_restaurants.csv")
+```
+
+Notice that I have called it something short but memorable (`mine`)
+to make it easier to write code about the dataset. Open the file with the
+data viewer (open right hand corner) and check that it matches what you 
+created.
+
+### Simple plotting, again
+
+Recall that we can create plots in R. Specifically, use something like this
+to get a bar plot of the cuisine types:
+
+```{r}
+ggplot(mine, aes(cuisine)) +
+  geom_bar()
+```
+
+Copy and paste the code above in the chunk below but change the variable to
+something else and note what happens:
+
+```{r}
+
+```
+
+For a scatter plot of how often you visit each year and the average cost, use
+this:
+
+```{r}
+ggplot(mine, aes(year, cost)) +
+  geom_point()
+```
+
+Similarly, copy the scatter plot code below and see what happens if you use a
+difference pair of variables:
+
+```{r}
+
+```
+
+We will now return briefly the class notes.
+
+### Plotting, once again
+
+Now, after downloading the entire class dataset, read in this file as a data
+set named `class` (Hint: copy and modify the code from above):
+
+```{r}
+
+```
+
+Repeat the bar plot of cuisine for the new dataset:
+
+```{r}
+
+```
+
+And repeat the scatter plot of year and cost:
+
+```{r}
+
+```
+
+As you explore the dataset, are there any interesting patterns or outliers
+in the data?
+
+**Answer**:
+
+What benefit of writing analysis as code is illustrated well in the lab
+today?
+
+**Answer**:
+
+## Submission
+
+When submitting this lab, make sure to also upload the csv files
+`my_restaurants.csv` and `class_restaurants.csv` in order to receive credit for
+the assignment. Generally if you create a dataset as part of a lab, you should
+also upload the data itself.
