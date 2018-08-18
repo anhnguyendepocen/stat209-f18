@@ -10,8 +10,12 @@ output: html
 
 ## Learning Objectives
 
-- 
-
+- Identify elements composing a statistical visualization in the language of the
+Grammar of Graphics
+- Apply Grammar of Graphics to construct scatter plots, line plots, add
+best fit lines, and group averages
+- **Memorize** the syntax for constructing a scatter plot using **ggplot2**
+- Use facets to break a plot up by a categorical variable
 
 ## Grammar of Graphics
 

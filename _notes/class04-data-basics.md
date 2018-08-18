@@ -8,8 +8,10 @@ output: html
 
 ## Learning Objectives
 
-- 
-
+- Describe the two components of tabular data (observations and variables)
+- Identify a comma seperated values (CSV) file
+- Create tabular data in a spreadsheet and export to CSV
+- Read a local CSV file into R with `read_csv`
 
 ## Tabular data formats
 

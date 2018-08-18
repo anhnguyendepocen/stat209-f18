@@ -8,7 +8,10 @@ output: html
 
 ## Learning Objectives
 
-- 
+- List the key components of Exploratory Data Analysis (EDA)
+- Describe and memorize the modes of EDA
+- Infer possible data sources from interactive visualizations
+- Make an oral presentation from a data analysis
 
 ## Exploratory Data Analysis
 

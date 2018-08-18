@@ -8,10 +8,13 @@ output: html_notebook
 
 
 
-## Objectives
+## Learning Objectives
 
-Develop tools for summarizing a dataset numerically, and how we can use these
-summaries to produce interesting new visualizations.
+- Describe what the mean of a numeric variable measures
+- Describe what the quantiles of a numeric variable measures
+- Apply the definition of the variance and standard deviation to
+a numeric variable.
+- Plot group-wise summary statistics using a violin or boxplot.
 
 ## Mid-course survey summary
 
@@ -19,7 +22,7 @@ Thank you all again for filling out the mid-course review forms. They were
 very helpful for me in planning the notes for the remainder of the semester.
 Some themes I saw:
 
-- 
+-
 
 Additionally, I did take other one-off comments that were made under
 consideration even if not listed here. If you have any other comments or

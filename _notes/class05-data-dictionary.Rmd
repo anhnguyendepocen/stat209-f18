@@ -15,8 +15,11 @@ knitr::opts_chunk$set(dpi = 300)
 
 ## Learning Objectives
 
-- 
-
+- Categorize a variable as a 'numeric' or 'character' data type
+- Identify the need for data consistency
+- Memorize conditions for specifying consistent numeric and categorical data
+- Construct a data dictionary
+- Memorize variable naming conventions for our course
 
 Today's goal is to follow up on our experiment in collecting data last week.
 We will formalize the concept of a data type and discuss the importance of

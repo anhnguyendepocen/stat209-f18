@@ -10,7 +10,9 @@ output: html
 
 ## Learning Objectives
 
-- 
+- Map variables to graphic aesthetics to control elements such as color, shape,
+and size.
+- Apply scales to modify the colors and plot ranges of a visualization
 
 ## Data Aesthetics
 
@@ -59,7 +61,7 @@ is the ability to map variables into other graphical parameters. These are calle
 "aesthetics" (that is what the `aes()` function stands for) and we already saw one example
 last time with the `geom_text` function.
 
-For example, we can change the color of the points to correspond to a variable in the 
+For example, we can change the color of the points to correspond to a variable in the
 dataset like this:
 
 
@@ -94,7 +96,7 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
 
 ## Scales
 
-We can control the exact color choosen in the plot using a layer type known as 
+We can control the exact color choosen in the plot using a layer type known as
 a scale. For example, the color pallet used with the **viridis** package can be
 used to change the colors choosen in a plot:
 
@@ -111,7 +113,7 @@ The viridis color pallet is optimized for readability for people who are color b
 It also improves the plot when printed in black and white or projected on a badly
 tuned projector.
 
-## Prototype and References
+## References
 
 If you would like more references, here is a cheat-sheet and online notes that
 extend what we have done today:

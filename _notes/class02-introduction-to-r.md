@@ -8,7 +8,10 @@ output: html
 
 ## Learning Objectives
 
-- 
+- Create GitHub account and class repository
+- Install R and RStudio on your computer
+- Open, edit, and run an RMarkdown file
+- Upload lab assignment to GitHub
 
 ## GitHub
 

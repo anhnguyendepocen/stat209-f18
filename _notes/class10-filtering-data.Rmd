@@ -23,11 +23,11 @@ theme_set(theme_minimal())
 
 ## Learning Objectives
 
-- 
-
-
-Today we will discuss how to construct new datasets as a subset of a current
-dataset.
+- Create a new version of a dataset by taking a subset of the observations
+- Apply binary operators such as `>`, `>=`, `==`, and `%in%` to specify a
+filtering action
+- Use the `between` and `as.POSIXct` to subset observations based on a date
+or date-time variable
 
 ## NYC Flights Data
 

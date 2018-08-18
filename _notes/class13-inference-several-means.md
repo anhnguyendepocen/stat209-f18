@@ -8,10 +8,10 @@ output: html_notebook
 
 
 
-## Objectives
+## Learning Objectives
 
-Extend the inference methods from last class to measure the difference
-between two or more means.
+- Extend the two-sample t-test to multiple groups
+- Apply model-fit metrics to a regression analysis
 
 ## Comparing Two Means
 

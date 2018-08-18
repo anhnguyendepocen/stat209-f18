@@ -10,11 +10,8 @@ output: html
 
 ## Learning Objectives
 
-- 
-
-
-Today we will review the elements of the grammar of graphics and extend
-this grammar to allow for manual annotations of data visualizations.
+- Review elements in the Grammar of Graphics
+- Manually annotate of data visualizations with text, lines, and points
 
 ## GapMinder Data
 

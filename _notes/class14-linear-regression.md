@@ -8,10 +8,11 @@ output: html_notebook
 
 
 
-## Objectives
+## Learning Objectives
 
-In these notes we extend the inference ideas from the previous two classes to
-the relationship between two continuous variables.
+- Apply a linear regression to model the relationship between two continuous
+numeric variables
+- Interpret the meaning of a confidence interval in the context of linear regression
 
 ## Two continuous variables
 

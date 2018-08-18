@@ -10,7 +10,10 @@ output: html
 
 ## Learning Objectives
 
-- 
+- Identify the unit of observation of a data set
+- Describe the 'tidy data' format
+- Collect data as a structured tidy dataset
+- Use `left_join` to combine linked tables in a tidy data schema
 
 ## Unit of Observation
 
@@ -20,7 +23,7 @@ so far developed. This change will allow us to accurately store and describe
 nearly any structured dataset. Before we get there, it will be useful to define
 a concept called the **unit of observation**.
 
-In short, the unit of observation describes what type of element is described 
+In short, the unit of observation describes what type of element is described
 by a single row of the data. Here is a dataset that records specific commercial
 flights from one of the three NYC airports in 2013:
 
@@ -48,7 +51,7 @@ flights
 ## # ... with 272,860 more rows
 {% endhighlight %}
 
-The unit of observation here is a **flight**. Likewise, here is a dataset 
+The unit of observation here is a **flight**. Likewise, here is a dataset
 describing information about specific planes:
 
 
@@ -75,7 +78,7 @@ planes
 ## # ... with 3,312 more rows
 {% endhighlight %}
 
-The unit of observation of this dataset is an individual plane. Or, in this 
+The unit of observation of this dataset is an individual plane. Or, in this
 dataset:
 
 
@@ -112,16 +115,16 @@ not) contain metadata about the plane, destination airport, or arrival airport.
 It **does** indicate which plane was flying, where it started, and where it
 landed. These are okay because these values are about the flight.
 
-A structured dataset that adheres to this principal is called "tidy data". 
+A structured dataset that adheres to this principal is called "tidy data".
 Benefits of this approach include:
 
 - no repeated information
 - internal consistency
 - easy to modify
 
-Take the flights dataset and the location of each airport. If these values 
+Take the flights dataset and the location of each airport. If these values
 were stored in the flight dataset the locations would be repeated each time
-there is a flight. This is cumbersome to enter and might lead to someone 
+there is a flight. This is cumbersome to enter and might lead to someone
 accidentally inputting the wrong value on some rows. Also, if we later
 determined that a particular airport's exact coordinates have changed it would
 be difficult to change the values in the table. Instead, storing  the location
@@ -157,7 +160,7 @@ datasets (as well as two other tables I did not initially show):
 Typically a relation maps a single row in one dataset to many rows in another.
 For example, each flight has one origin, but each origin has many flights.
 To combine tables that share a relation, we can use the function `left_join`
-in R. 
+in R.
 
 
 {% highlight r %}

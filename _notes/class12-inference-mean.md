@@ -8,13 +8,12 @@ output: html_notebook
 
 
 
-## Objectives
+## Learning Objectives
 
-Today we turn our attention to modeling, the third and
-final aspect of data analysis. The first model we will look at is
-modeling the mean value of some random process. In these notes
-we will start to see how to implement this model directly in R and how
-to analyze how well it fits the data at hand.
+- Conduct a randomized experiment taking a sample from a larger population
+- Model the mean of a random process using a t-test and describe the
+assumptions of the model
+- Explain the meaning of a confidence interval
 
 ## A simple example
 

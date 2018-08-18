@@ -10,11 +10,11 @@ output: html
 
 ## Learning Objectives
 
-- 
-
-
-Today we will discuss how to construct new datasets as a subset of a current
-dataset.
+- Create a new version of a dataset by taking a subset of the observations
+- Apply binary operators such as `>`, `>=`, `==`, and `%in%` to specify a
+filtering action
+- Use the `between` and `as.POSIXct` to subset observations based on a date
+or date-time variable
 
 ## NYC Flights Data
 
@@ -248,18 +248,6 @@ For example, here is a way of filtering the flights dataset using the
 
 {% highlight r %}
 flights_post_oct <- filter(flights, time_hour >= as.POSIXct("2013-11-01"))
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Warning in strptime(xx, f <- "%Y-%m-%d %H:%M:%OS", tz = tz): unknown
-## timezone 'zone/tz/2018c.1.0/zoneinfo/UTC'
-{% endhighlight %}
-
-
-
-{% highlight r %}
 flights_post_oct
 {% endhighlight %}
 
@@ -298,7 +286,7 @@ flights_xmas
 
 
 {% highlight text %}
-## # A tibble: 715 x 19
+## # A tibble: 721 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time
 ##    <int> <int> <int>    <int>          <int>     <int>    <int>
 ##  1  2013    12    25      456            500        -4      649
@@ -311,7 +299,7 @@ flights_xmas
 ##  8  2013    12    25      559            600        -1      855
 ##  9  2013    12    25      559            600        -1      849
 ## 10  2013    12    25      600            600         0      850
-## # ... with 705 more rows, and 12 more variables: sched_arr_time <int>,
+## # ... with 711 more rows, and 12 more variables: sched_arr_time <int>,
 ## #   arr_delay <int>, carrier <chr>, flight <int>, tailnum <chr>,
 ## #   origin <chr>, dest <chr>, air_time <int>, distance <int>, hour <int>,
 ## #   minute <int>, time_hour <dttm>
@@ -331,23 +319,18 @@ flights_xmas_night
 
 
 {% highlight text %}
-## # A tibble: 162 x 19
-##     year month   day dep_time sched_dep_time dep_delay arr_time
-##    <int> <int> <int>    <int>          <int>     <int>    <int>
-##  1  2013    12    25     1748           1800       -12     1919
-##  2  2013    12    25     1753           1800        -7     1935
-##  3  2013    12    25     1757           1805        -8     1946
-##  4  2013    12    25     1800           1805        -5     1914
-##  5  2013    12    25     1803           1805        -2     2024
-##  6  2013    12    25     1804           1802         2     2052
-##  7  2013    12    25     1805           1810        -5     1917
-##  8  2013    12    25     1805           1805         0     1949
-##  9  2013    12    25     1807           1810        -3     2058
-## 10  2013    12    25     1809           1815        -6     2018
-## # ... with 152 more rows, and 12 more variables: sched_arr_time <int>,
-## #   arr_delay <int>, carrier <chr>, flight <int>, tailnum <chr>,
-## #   origin <chr>, dest <chr>, air_time <int>, distance <int>, hour <int>,
-## #   minute <int>, time_hour <dttm>
+## # A tibble: 5 x 19
+##    year month   day dep_time sched_dep_time dep_delay arr_time
+##   <int> <int> <int>    <int>          <int>     <int>    <int>
+## 1  2013    12    25     2315           2330       -15      348
+## 2  2013    12    25     2352           2359        -7      429
+## 3  2013    12    25     2353           2355        -2      442
+## 4  2013    12    25     2357           2359        -2      446
+## 5  2013    12    25     2357           2359        -2      433
+## # ... with 12 more variables: sched_arr_time <int>, arr_delay <int>,
+## #   carrier <chr>, flight <int>, tailnum <chr>, origin <chr>, dest <chr>,
+## #   air_time <int>, distance <int>, hour <int>, minute <int>,
+## #   time_hour <dttm>
 {% endhighlight %}
 
 This will be useful if you want to subset the data you had from the first
