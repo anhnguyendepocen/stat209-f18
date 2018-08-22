@@ -36,31 +36,6 @@ analyzing, and writing about datasets from a variety of fields.
 You will be able to use these skills to address data-driven problems
 in a wide range of application domains.
 
-## John Tukey
-
-<img src="../assets/img/tukey.jpg" alt="Tukey" style="width: 200px;"/>
-
-- "The best thing about being a statistician is that
-you get to play in everyone's backyard."
-
-## About me
-
-I am an *applied statistician*. A sampling of projects and datasets
-I have worked on include:
-
-- cell phone telemetry
-- emergency room patient flow
-- finding holes in specialized medical coverage in rural US
-- Canadian court case citations
-- Olympic figure skating scoring
-- auto insurance risk factors
-- 170k documentary photographs from the 1930's
-- treatment outcomes for open-angle glaucoma
-- detecting radicalization from social media data
-- financial warfare
-
-We will talk about many of these projects throughout the semester.
-
 ## Hans Rosling
 
 Hans Rosling's 200 Countries, 200 Years, 4 Minutes:
@@ -132,10 +107,21 @@ I've avoided projects from other 209 courses because we may
 re-use some of those datasets. However, the basic structure
 of the projects, particularly the first one, is very similar.
 
+## Names
+
+I am an terrible at remembering names, so I typically create nametags for
+each of my classes and use these for the first month or so of the semester.
+Please either grab these from me when you walk in or (if I've assigned groups)
+sit where your nametag is given.
+
+For me, please note that Taylor is my first name and Arnold is my last name.
+I prefer to go by "Taylor", though "Dr. Arnold" is fine too if that's more
+comfortable for you. But please don't use "Dr. Taylor" or "Arnold".
+
 # Syllabus
 
 Below I highlight some of the most important elements of the course syllabus.
-The full syllabus, which you should consult on your own, is posted on the 
+The full syllabus, which you should consult on your own, is posted on the
 course website.
 
 ## Website
@@ -171,7 +157,7 @@ complete it. The course has no final exam.
 
 The ultimate aim of the course is to teach you how to *apply* statistics
 to real-world questions. To this end, you will complete four data-oriented
-projects during the course of the semester. 
+projects during the course of the semester.
 
 ## Final Grades
 
@@ -218,10 +204,10 @@ is considered equivalent to an absence.
 missing a quiz, please arrange to meet with me as soon as possible.
 - **Class conduct:** During class I expect you to refrain from checking
 email, being on phones, or working on assignments for other classes.
-- **Computers:** I except you to bring a working laptop with R and 
-RStudio installed. If this poses a challenge, please speak with me at the 
+- **Computers:** I except you to bring a working laptop with R and
+RStudio installed. If this poses a challenge, please speak with me at the
 start of the semester or as new problems arise.
-- **Office hours:** Rather than fixed weekly office hours, I will 
+- **Office hours:** Rather than fixed weekly office hours, I will
 provide blocks of open times to meet with me particularly focused around
 project due dates. If you find me in my office, poke your head in and I
 am usually happy to meet on the spot. Otherwise, please email me to make an
