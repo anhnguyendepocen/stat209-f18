@@ -9,6 +9,7 @@ not recommend this tool because:
 3. Can only use media that is supported by the tool. 
 4. Only load one piece of media per slide.
 5. Most default style choices cannot be overridden or changed.
+6. Sometimes it doesn't work quite right.
 
 But for a first attempt at using digital tools to tell a multimedia story it is
 a great way to get quickly started.
