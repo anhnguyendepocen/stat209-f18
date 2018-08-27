@@ -3,8 +3,8 @@ Short link to this site: [https://bit.ly/2Pbv1Pl](https://bit.ly/2Pbv1Pl)
 ## Mapping with StoryMap.js
 
 Today we are going to use a tool called **StoryMap.js** in order to do digital
-storytelling with maps and other media elements. For day-to-day use, I would
-not recommend this tool because:
+storytelling with maps and other media elements. For long-term projects, I would
+not recommend this tool because of some limitations:
 
 1. No way to export your raw data for archiving or storing in another platform.
 2. Not clear where your data sits on the KnightLab website.
