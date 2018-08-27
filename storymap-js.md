@@ -1,3 +1,5 @@
+Short link to this site: [https://bit.ly/2Pbv1Pl](https://bit.ly/2Pbv1Pl)
+
 ## Mapping with StoryMap.js
 
 Today we are going to use a tool called **StoryMap.js** in order to do digital
