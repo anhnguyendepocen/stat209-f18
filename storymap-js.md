@@ -70,3 +70,5 @@ the event, and some media such as an image or a YouTube video. The last slide sh
 one about this class.
 
 We will work on these now in class. 
+
+Finally, add your name and link here: [link list](https://docs.google.com/document/d/1ebklaItrScGQ0_j4pWrD7MtZG6n1ruofi4DeLb36TCU/edit?usp=sharing).
