@@ -112,15 +112,12 @@ installed.
 
 ## RMarkdown
 
-We are going to work through the first lab together now. Click on the link
-below to download the file:
-
-<a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/labs/lab01.Rmd" download="lab01.Rmd" target="_blank">lab01.Rmd</a>
+We are going to work through the first lab together now.
 
 The idea of an Rmarkdown file is that we can integrate code and text together.
-This makes it self-documenting and allows analyses to be reproducible. Save
-this in a file on your computer and open it in RStudio (you should be able to
-double click it and the file will open automatically).
+This makes it self-documenting and allows analyses to be reproducible. Navigate
+to the zipped file you had from GitHub and open the file "lab/lab01.Rmd".
+You should be able to double click it and the file will open automatically.
 
 You should see screen like this (its a screen shot from my Mac, but looks very
 similar on Windows):
