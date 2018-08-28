@@ -1,5 +1,5 @@
 ---
-title: "Lab 02: Introduction to R and GitHub"
+title: "Lab 02: Introduction to R"
 output: html_document
 ---
 
@@ -64,6 +64,130 @@ What is one change you'd like to make to the way R has constructed the
 plot?
 
 **Answer**:
+
+
+Click on the data in the top right hand pane. This will open an Excel
+like view of the dataset. Describe what the variable `head_of_state` most
+likely means:
+
+**Answer**:
+
+Another way to look at the data is by typing its name and running the
+dataset name verbatim. Run the command `arbuthnot` below:
+
+```{r}
+arbuthnot
+```
+
+### Variables
+
+You might also have noticed the row of three letter abbreviations under
+the column names. These describe the type of each variable:
+
+- `int` stands for integers.
+- `dbl` stands for doubles, or real numbers.
+- `chr` stands for character vectors, or strings.
+
+The types of graphics and data manipulation we can do with a given
+variable is highly determined by the variable data types.
+
+Explain in words why the variables `boys` and `girls` are interpreted as
+integers.
+
+**Answer**:
+
+Create a box plot of the heads of state:
+
+```{r}
+ggplot(births, aes(head_of_state)) +
+  geom_line()
+```
+
+Who was the longest serving head of state during the time period of this
+data set?
+
+**Answer**:
+
+How are the heads of state arranged be default?
+
+**Answer**:
+
+We can add color to the plot from the last Lab to combine the head of state
+information with the year and total number of births:
+
+```{r}
+ggplot(births, aes(year, total)) +
+  geom_line(aes(color = head_of_state))
+```
+
+Under which heads of state was the number of girls born consistently low?
+
+**Answer**:
+
+### Critical thinking
+
+The Arbuthnot data set refers to Dr. John Arbuthnot,
+an 18th century physician, writer, and mathematician. He gathered the
+baptism records for children born in London for every year from 1629 to
+1710. He was interested in studying what we would now call the **secondary
+sex ratio**, the ratio of males to females in a population at birth. This
+would later be a major element of study of Ronald Fisher, one of the most
+well-known, early pioneering statisticians.
+
+Why would John Arbuthnot be using baptism records to study his question of
+interest? (Note: I'll ask you a lot of "thought" questions like this that
+require critical thinking rather than coding or numerical analysis):
+
+**Answer**:
+
+## Present Day Data
+
+Now, for practice, read in the following dataset with the same
+information for the present day:
+
+```{r}
+present <- read_csv("https://statsmaths.github.io/stat_data/present.csv")
+```
+
+What years are included in this data set?
+
+**Answer**:
+
+How do these counts compare to Arbuthnot's? Are they of a similar
+magnitude?
+
+**Answer**:
+
+Make a plot that displays the proportion of boys born over time.
+
+```{r}
+
+```
+
+What do you see?
+
+**Answer**:
+
+In what year did we see the highest total number of births in the U.S.?
+Note: You'll need another plot.
+
+```{r}
+
+```
+
+**Answer**:
+
+Reconstruct the line plot that is colored by the current head of state.
+
+```{r}
+
+```
+
+Do you see any patterns related to particular presidencies? What benefit(s)
+does including this information add to the plot?
+
+# Answer:
+
 
 ## Submission
 
