@@ -18,7 +18,7 @@ repository ahead of the next class meeting.
 
 ## Testing
 
-To start, let's just make sure R is running okay on your computer while 
+To start, let's just make sure R is running okay on your computer while
 explaining the basic mechanism for using RMarkdown files. Below is a **code
 chunk**. Click the green run button to execute the code. The result should
 appear directly below.
@@ -35,7 +35,7 @@ to calculate the sum of 1 and 2 and execute the code.
 ```
 
 In the RMarkdown labs you will also see within the text the words "Answer:".
-This indicates that you need to type into the document your answer to a 
+This indicates that you need to type into the document your answer to a
 question. Here is an example already filled in.
 
 What does R think is the sum of 1 and 1?
@@ -44,7 +44,7 @@ What does R think is the sum of 1 and 1?
 
 Now you try. What does R think is the sum of 1 and 2?
 
-**Answer**: 
+**Answer**:
 
 ## Further set-up
 
@@ -80,8 +80,7 @@ pkgs <- c("dplyr", "ggplot2", "stringr", "ggmap", "ggrepel",
 install.packages(pkgs,
                  repos = "https://cloud.r-project.org",
                  type = "binary",
-                 dependencies = TRUE,
-                 quiet = TRUE)
+                 dependencies = TRUE)
 ```
 
 Now, you will also need install the `smodels` package. I have written

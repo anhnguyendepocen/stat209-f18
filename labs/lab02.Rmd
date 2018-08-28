@@ -12,7 +12,7 @@ theme_set(theme_minimal())
 ```
 
 This second lab, due before the third class meeting, assumes that you have
-already installed the packages described in the first lab. You **must** run 
+already installed the packages described in the first lab. You **must** run
 the block of code above this text before running anything else. It loads
 packages that is used by the rest of the script.
 
@@ -47,7 +47,7 @@ Where/how do you think this data may have been collected?
 
 ### Plots
 
-Now, let's visualize the dataset by constructing several different plots. We 
+Now, let's visualize the dataset by constructing several different plots. We
 will learn later how the plotting mechanism actually works. Today just run the
 code and enjoy.
 

@@ -8,84 +8,84 @@ output: html
 
 ## Learning Objectives
 
-- Create GitHub account and class repository
-- Install R and RStudio on your computer
-- Open, edit, and run an RMarkdown file
-- Upload lab assignment to GitHub
+- Explain the goal of applied data analysis.
+- Describe at a high-level the three components of the data analysis pipeline.
+- Practice using R and GitHub.
 
-## GitHub
+## Hans Rosling
 
-If you do not already have an account, go to the main webpage and create a
-free account. Try to pick a professional name as you may find that you want
-to make this public at some point:
+Hans Rosling's 200 Countries, 200 Years, 4 Minutes:
 
-- [https://github.com/](https://github.com/)
+- [https://www.youtube.com/watch?v=jbkSRLYSojo](https://www.youtube.com/watch?v=jbkSRLYSojo)
 
-Next, follow this link and accept the invitation:
+I have shown this to nearly all of my statistics courses, and while
+a bit dated it is still the best representation of what this course
+is all about.
 
-- [https://classroom.github.com/a/Swa5EJWV](https://classroom.github.com/a/Swa5EJWV)
+## NYTimes
 
-Assuming you have a valid GitHub account, this will set up a repository where
-all of your projects for this semester should be posted.
+Of course, most of our arguments will be in a written form.
+For an example of that, see this NYTimes article *Gun homicides
+in New Zealand are about as common as deaths from
+falling from a ladder in the United States*:
 
-# Setting up R
+- [http://nyti.ms/28yRifm](http://nyti.ms/28yRifm)
 
-## Download software
+Notice how statistics is used as evidence in a larger arugment.
 
-The first step is to download the R programming language. To do
-this go to [https://cran.r-project.org/](https://cran.r-project.org/)
-and select your platform:
+## FiveThirtyEight
 
-![](../assets/img/cran01.jpeg)
+Or, if you like sports, here is the 538 article *Steroids Probably
+Aren't Causing Baseball's Power Surge*:
 
-For macOS, just download R-3.5.1 (or whatever is the most recent):
+- [http://53eig.ht/2aKodni](http://53eig.ht/2aKodni)
 
-![](../assets/img/cran02.jpeg)
+I'll often give those of you interested in a particular subject
+(i.e., sports, economics, medicine) the chance to work with data
+that matches your interests.
 
-For Windows, first select **base**
+## Statistics in 209
 
-![](../assets/img/cran03.jpeg)
+This course is truly about the holistic process of **doing**
+statistics. There will be very little mathematical content. For that,
+you'll need the MATH329 (Probability) and MATH330 (Statistics)
+sequence.
 
-And then *Download R 3.5.1*
+**So, come into this course with an open mind about
+what we will be covering. I believe you will find it interesting,
+fun, and incredibly useful.**
 
-![](../assets/img/cran04.jpeg)
+## Data Analysis
 
-One you have the .pkg (macOS) or .exe (Windows) file,
-install this on your computer according to the default
-settings.
+If we are not doing much mathematics, what will we be doing?
+We will be covering the basic elements of data analysis:
 
-## RStudio
+![](../assets/img/data_science_all.png)
 
-The files we just downloaded are the core R language files
-doing all the hard work of processing data. Next, we'll
-install a helpful GUI frontend that make calling R easier.
+In order to actually *do* these things, we will work with
+the R programming language:
 
-Go to [https://www.rstudio.com/](https://www.rstudio.com/).
-Click on Products => RStudio.
+![](../assets/img/RStudio-Logo-Blue-Gray-250.png)
 
-![](../assets/img/rstudio01.jpeg)
+It is freely available for all major operating systems and
+is pre-installed on many campus computers.
 
-Scroll down to the **DOWNLOAD RSTUDIO DESKTOP** button
-and click on it.
+## Prior projects
 
-![](../assets/img/rstudio02.jpeg)
+To get an idea of the kinds of analysis we'll be working on
+here are two projects from other applied statitistics courses
+I've taught:
 
-Scroll down again to the **Installers for Supported Platforms**.
-The Windows link gives you an exe:
+- [Complexity of Shakespeare’s Plays](../assets/project_example_289.html)
+- [Fruit/Vegetable Classification](https://statsmaths.github.io/stat395-f17/assets/final_project/dedominicis.html)
 
-![](../assets/img/rstudio03.jpeg)
-
-And the macOS link gives a dmg:
-
-![](../assets/img/rstudio04.jpeg)
-
-Now, install R or RStudio as you would any other program. It
-should link automatically to the version of R you just
-installed.
+I've avoided projects from other 209 courses because we may
+re-use some of those datasets. However, the basic structure
+of the projects, particularly the first one, is very similar.
 
 # R Basics
 
-Today we begin our study of using the R programming language to analyze
+Today we begin our formal study of using the R programming language to analyze
 data. There are two basic philosophies regarding how to teach R: (1) working
 from the ground up, methodically going through each function and command one
 by one or (2) learning by immersion, starting with short by complete examples
@@ -96,34 +96,12 @@ and generally leads to a better understanding of how to do statistical
 computing. Throughout the semester we will go back and fill in any remaining
 details as needed.
 
-## RMarkdown
-
-We are going to work through the first lab together now. Click on the link
-below to download the file:
-
-<a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/labs/lab01.Rmd" download="lab01.Rmd" target="_blank">lab01.Rmd</a>
-
-The idea of an Rmarkdown file is that we can integrate code and text together.
-This makes it self-documenting and allows analyses to be reproducible. Save
-this in a file on your computer and open it in RStudio (you should be able to
-double click it and the file will open automatically).
-
-You should see screen like this (its a screen shot from my Mac, but looks very
-similar on Windows):
-
-![](../assets/img/intro-rstudio.png)
-
-
-We will now walk through the markdown file and explain how to run code, install
-R packages, and submit your results.
-
 ## Assignment
 
-The lab numbers correspond to the course numbers, so you actually just
-submitted the lab associated with the first day of class. Your assignment,
-which we may start in class, is to complete and submit the second lab. You
-can find this lab here:
+Your assignment, which we may start in class, is to complete and submit the
+second lab. You can find this lab here:
 
 <a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/labs/lab02.Rmd" download="lab02.Rmd" target="_blank">lab02.Rmd</a>
 
 If you run into any problems please email me as soon as possible.
+

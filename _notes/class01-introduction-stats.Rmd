@@ -1,5 +1,5 @@
 ---
-title: "Class 01: Introduction to Statistics"
+title: "Class 01: Introduction and Set-up"
 author: "Taylor Arnold"
 output: html
 ---
@@ -18,10 +18,12 @@ knitr::opts_chunk$set(dpi = 300)
 Each set of class notes will contain a list of learning objects. Here are the
 objectives for today.
 
-- Explain the goal of applied data analysis.
-- Describe at a high-level the three components of the data analysis pipeline.
 - Identify key elements of the course structure from the syllabus.
 - Inquire about any unclear points or potential concerns.
+- Create GitHub account and class repository
+- Install R and RStudio on your computer
+- Open, edit, and run an RMarkdown file
+- Upload lab assignment to GitHub
 
 # Course Description
 
@@ -36,198 +38,104 @@ analyzing, and writing about datasets from a variety of fields.
 You will be able to use these skills to address data-driven problems
 in a wide range of application domains.
 
-## Hans Rosling
+## GitHub
 
-Hans Rosling's 200 Countries, 200 Years, 4 Minutes:
+If you do not already have an account, go to the main webpage and create a
+free account. Try to pick a professional name as you may find that you want
+to make this public at some point:
 
-- [https://www.youtube.com/watch?v=jbkSRLYSojo](https://www.youtube.com/watch?v=jbkSRLYSojo)
+- [https://github.com/](https://github.com/)
 
-I have shown this to nearly all of my statistics courses, and while
-a bit dated it is still the best representation of what this course
-is all about.
+Next, follow this link and accept the invitation:
 
-## NYTimes
+- [https://classroom.github.com/a/Swa5EJWV](https://classroom.github.com/a/Swa5EJWV)
 
-Of course, most of our arguments will be in a written form.
-For an example of that, see this NYTimes article *Gun homicides
-in New Zealand are about as common as deaths from
-falling from a ladder in the United States*:
+Assuming you have a valid GitHub account, this will set up a repository where
+all of your projects for this semester should be posted.
 
-- [http://nyti.ms/28yRifm](http://nyti.ms/28yRifm)
+## Create Workspace
 
-Notice how statistics is used as evidence in a larger arugment.
+Now, either download the entire repository as a zip file. If GitHub is being a pain,
+you can also download the
+[zip file directly](https://github.com/statsmaths/stat209-template/archive/master.zip).
+Either way, put the results somewhere
+on your computer that you can easily find and save. You’ll put all of the materials
+from this class inside that folder.
 
-## FiveThirtyEight
+# Setting up R
 
-Or, if you like sports, here is the 538 article *Steroids Probably
-Aren't Causing Baseball's Power Surge*:
+## Download software
 
-- [http://53eig.ht/2aKodni](http://53eig.ht/2aKodni)
+The first step is to download the R programming language. To do
+this go to [https://cran.r-project.org/](https://cran.r-project.org/)
+and select your platform:
 
-I'll often give those of you interested in a particular subject
-(i.e., sports, economics, medicine) the chance to work with data
-that matches your interests.
+![](../assets/img/cran01.jpeg)
 
-## Statistics in 209
+For macOS, just download R-3.5.1 (or whatever is the most recent):
 
-This course is truly about the holistic process of **doing**
-statistics. There will be very little mathematical content. For that,
-you'll need the MATH329 (Probability) and MATH330 (Statistics)
-sequence.
+![](../assets/img/cran02.jpeg)
 
-**So, come into this course with an open mind about
-what we will be covering. I believe you will find it interesting,
-fun, and incredibly useful.**
+For Windows, first select **base**
 
-## Data Analysis
+![](../assets/img/cran03.jpeg)
 
-If we are not doing much mathematics, what will we be doing?
-We will be covering the basic elements of data analysis:
+And then *Download R 3.5.1*
 
-![](../assets/img/data_science_all.png)
+![](../assets/img/cran04.jpeg)
 
-In order to actually *do* these things, we will work with
-the R programming language:
+One you have the .pkg (macOS) or .exe (Windows) file,
+install this on your computer according to the default
+settings.
 
-![](../assets/img/RStudio-Logo-Blue-Gray-250.png)
+## RStudio
 
-It is freely available for all major operating systems and
-is pre-installed on many campus computers.
+The files we just downloaded are the core R language files
+doing all the hard work of processing data. Next, we'll
+install a helpful GUI frontend that make calling R easier.
 
-## Prior projects
+Go to [https://www.rstudio.com/](https://www.rstudio.com/).
+Click on Products => RStudio.
 
-To get an idea of the kinds of analysis we'll be working on
-here are two projects from other applied statitistics courses
-I've taught:
+![](../assets/img/rstudio01.jpeg)
 
-- [Complexity of Shakespeare’s Plays](../assets/project_example_289.html)
-- [Fruit/Vegetable Classification](https://statsmaths.github.io/stat395-f17/assets/final_project/dedominicis.html)
+Scroll down to the **DOWNLOAD RSTUDIO DESKTOP** button
+and click on it.
 
-I've avoided projects from other 209 courses because we may
-re-use some of those datasets. However, the basic structure
-of the projects, particularly the first one, is very similar.
+![](../assets/img/rstudio02.jpeg)
 
-## Names
+Scroll down again to the **Installers for Supported Platforms**.
+The Windows link gives you an exe:
 
-I am an terrible at remembering names, so I typically create nametags for
-each of my classes and use these for the first month or so of the semester.
-Please either grab these from me when you walk in or (if I've assigned groups)
-sit where your nametag is given.
+![](../assets/img/rstudio03.jpeg)
 
-For me, please note that Taylor is my first name and Arnold is my last name.
-I prefer to go by "Taylor", though "Dr. Arnold" is fine too if that's more
-comfortable for you. But please don't use "Dr. Taylor" or "Arnold".
+And the macOS link gives a dmg:
 
-# Syllabus
+![](../assets/img/rstudio04.jpeg)
 
-Below I highlight some of the most important elements of the course syllabus.
-The full syllabus, which you should consult on your own, is posted on the
-course website.
+Now, install R or RStudio as you would any other program. It
+should link automatically to the version of R you just
+installed.
 
-## Website
+## RMarkdown
 
-All of the materials and assignments for the course will be posted
-on the class website:
+We are going to work through the first lab together now. Click on the link
+below to download the file:
 
-> https://statsmaths.github.io/stat209-f18
+<a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/labs/lab01.Rmd" download="lab01.Rmd" target="_blank">lab01.Rmd</a>
 
-The website contains notes, assignment details, and
-supplemental materials. At the end of the semester, this version of
-the course will be archived and available for your reference.
+The idea of an Rmarkdown file is that we can integrate code and text together.
+This makes it self-documenting and allows analyses to be reproducible. Save
+this in a file on your computer and open it in RStudio (you should be able to
+double click it and the file will open automatically).
 
-## Labs
+You should see screen like this (its a screen shot from my Mac, but looks very
+similar on Windows):
 
-Most class meetings will have an assignment called a 'lab' associated with it.
-These consist of a set of questions that must be answered with either small
-snippets of code or short descriptive answers. Often we will start these during
-class, though they may sometimes be just for your own practice. Your solutions
-must be uploaded to your GitHub page prior to the start of the next class
-meeting. Labs are graded on a Pass/Fail scale.
+![](../assets/img/intro-rstudio.png)
 
-We will start with the first lab during the next class meeting.
-
-## Exams
-
-There will be three take-home midterm exams given throughout the semester.
-These are open notes and resources, though you must complete them on your
-own. The exam will be made available in class and you will have 24-hours to
-complete it. The course has no final exam.
-
-## Data Projects
-
-The ultimate aim of the course is to teach you how to *apply* statistics
-to real-world questions. To this end, you will complete four data-oriented
-projects during the course of the semester.
-
-## Final Grades
-
-The final grade will be determined by weighting the labs and projects as
-follows:
-
-- **Labs and Participation**: 10%
-- **Midterm Exams**: 30% (10% each)
-- **Projects**: 60% (15% each)
-
-To pass the course, you must also miss no more than four class meetings.
-Attendance requires that you arrive on-time, complete any out of class
-assignments for the day, and fully engage with the course material.
-Failing to fulfil these attendance requirements may result in a failing
-grade of 'V' or a reduction to your final course average at the instructor's
-sole discretion.
-
-## Course Policies
-
-The following class policies address some of the most common
-questions and concerns that students have. If anything is
-unclear, please feel free to contact me for clarification at
-any point in the semester.
-
-- **Academic honesty:** Cheating and plagiarism are grave scholarly
-offenses and potential grounds
-for expulsion; they are also a major barrier to your intellectual development.
-You are expected to familiarize yourself with the entirety of the
-University of Richmond’s Honor Code. If you are confused or unsure about
-appropriate citation protocol or any other aspect of the Honor code,
-please consult me before turning in an assignment.
-- **Special approval:** If you have special approval forms for extra
-time on exams or any other circumstances I should know about, please speak
-with me as early as possible so that we can best accommodate your needs.
-- **Late work:** You are expected to submit all work on-time. Late reports
-will be accepted after the due date with a full letter grade deduction for each
-24 hour period it is late (rounded up).
-- **Attendance:** You are expected to both attend and participate in most
-class meetings. If you must be absent due to illness or other pressing
-need, please let me know by email as soon as possible. A habit of arriving
-late, failing to participate, or failing to accomplish any out of class assignments
-is considered equivalent to an absence.
-- **Make-up work:** In instances where students have a valid excuse for
-missing a quiz, please arrange to meet with me as soon as possible.
-- **Class conduct:** During class I expect you to refrain from checking
-email, being on phones, or working on assignments for other classes.
-- **Computers:** I except you to bring a working laptop with R and
-RStudio installed. If this poses a challenge, please speak with me at the
-start of the semester or as new problems arise.
-- **Office hours:** Rather than fixed weekly office hours, I will
-provide blocks of open times to meet with me particularly focused around
-project due dates. If you find me in my office, poke your head in and I
-am usually happy to meet on the spot. Otherwise, please email me to make an
-appointment so that we can chat. Please note that appointments should
-be booked at least 24 hours ahead of time.
-- **Email:** I will also answer questions by email (it can, in fact,
-be much faster than scheduling an appointment for small issues). During the
-week, I aim to respond within 24 hours, with emails sent over the weekend
-responded to by Monday morning. If your question involves code, please attach
-your current lab or report as that will expedite my answering your question(s).
-
-These address some of the most common questions and concerns that
-students have. If anything is unclear, please feel free to contact
-me for clarification at any point in the semester.
-
-## For next time
-
-Please bring a laptop with an updated version of your operating system to our
-next class meeting. If this is not possible please stick around and speak with
-me at the end of the class.
+We will now walk through the markdown file and explain how to run code, install
+R packages, and submit your results.
 
 ## Questions
 
