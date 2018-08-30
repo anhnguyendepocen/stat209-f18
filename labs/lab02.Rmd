@@ -96,11 +96,13 @@ integers.
 
 **Answer**:
 
-Create a box plot of the heads of state:
+### Bar Plot
+
+Create a bar plot of the heads of state:
 
 ```{r}
 ggplot(births, aes(head_of_state)) +
-  geom_line()
+  geom_bar()
 ```
 
 Who was the longest serving head of state during the time period of this
@@ -112,7 +114,9 @@ How are the heads of state arranged be default?
 
 **Answer**:
 
-We can add color to the plot from the last Lab to combine the head of state
+### Color
+
+We can add color to the line plot from the last Lab to combine the head of state
 information with the year and total number of births:
 
 ```{r}
