@@ -8,73 +8,64 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readr)
 library(ggplot2)
 library(dplyr)
+library(viridis)
 theme_set(theme_minimal())
 ```
 
-The lab today lets you see a few more things that we can do in R with the
-Arbuthnot dataset. Again, we will cover the specifics in a few weeks. The
-point is to become familiar with the R interface so that once we get to
-formal graphics the code looks less overwhelming.
+This lab involves just a few short exercises to continue getting you familiar
+with R. Again, we will cover all of the details in full throughout the semester.
 
-We need to read in the Arbuthnot dataset once again:
+Start by reading in the `storms` dataset. This gives readings from historical
+Atlantic hurricanes from 2000-2015:
 
-```{r}
-arbuthnot <- read_csv("https://statsmaths.github.io/stat_data/arbuthnot.csv")
+```{r, message=FALSE}
+storms <- read_csv("https://statsmaths.github.io/stat_data/storms2.csv")
 ```
 
-Click on the data in the top right hand pane. This will open an Excel
-like view of the dataset. Describe what the variable `head_of_state` most
-likely means:
+We can draw a bar plot to see the number of storms each year:
+
+```{r}
+ggplot(storms, aes(year)) +
+  geom_bar()
+```
+
+What year seems to have the most readings and which seems to have the fewest?
 
 **Answer**:
 
-Another way to look at the data is by typing its name and running the
-dataset name verbatim. Run the command `arbuthnot` below:
-
-```{r}
-arbuthnot
-```
-
-You might also have noticed the row of three letter abbreviations under
-the column names. These describe the type of each variable:
-
-- `int` stands for integers.
-- `dbl` stands for doubles, or real numbers.
-- `chr` stands for character vectors, or strings.
-
-The types of graphics and data manipulation we can do with a given
-variable is highly determined by the variable data types.
-
-Explain in words why the variables `boys` and `girls` are interpreted as
-integers.
+Looking at the data, why can be not assume that the year with the highest counts
+had the highest number of storms?
 
 **Answer**:
 
-Create a box plot of the heads of state:
+The follow plot shows the relationship between storm winds and latitude (how far
+north the center of the storm is):
 
 ```{r}
-ggplot(births, aes(head_of_state)) +
-  geom_line()
+ggplot(storms, aes(lat, wind)) +
+   geom_point(aes(color = status))
 ```
 
-Who was the longest serving head of state during the time period of this
-data set?
+Describe a relationship you see in the plot.
 
 **Answer**:
 
-How are the heads of state arranged be default?
-
-**Answer**:
-
-We can add color to the plot from the last Lab to combine the head of state
-information with the year and total number of births: 
+In R we can construct new datasets from our original inputs. Here, we filter out
+just a single storm, Kate from 2015.
 
 ```{r}
-ggplot(births, aes(year, total)) +
-  geom_line(aes(color = head_of_state))
+sandy <- filter(storms, name == "Sandy", year == 2012)
 ```
 
-Under which heads of state was the number of girls born consistently low?
+We can then plot the storm trajectory as a function of latitude and longitude:
+
+```{r}
+ggplot(sandy, aes(long, lat)) +
+  geom_point(aes(color = wind)) +
+  scale_color_viridis()
+```
+
+At what latitude was the storm's measured wind speeds the highest?
 
 **Answer**:
 
