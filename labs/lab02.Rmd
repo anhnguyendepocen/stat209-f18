@@ -73,10 +73,10 @@ likely means:
 **Answer**:
 
 Another way to look at the data is by typing its name and running the
-dataset name verbatim. Run the command `arbuthnot` below:
+dataset name verbatim. Run the command `births` below:
 
 ```{r}
-arbuthnot
+births
 ```
 
 ### Variables
