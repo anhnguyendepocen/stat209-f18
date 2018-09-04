@@ -98,8 +98,11 @@ For today, here are some questions to answer about as we look at interactive
 visualizations:
 
 1. What is the source of the data?
-2. What types of visualizations are being used?
-3. What are 2-3 interesting observations you found in the dataset?
+2. What are some of the variables (measurements) being used in
+the visualization?
+3. What types of visualizations are being used? If you don't know the
+exact name of something, just describe it.
+4. What are 2-3 interesting observations you found in the dataset?
 
 I'll answer these for the Forced Migration dataset, then let you work on these
 questions in small groups.
