@@ -12,8 +12,8 @@ theme_set(theme_minimal())
 ```
 
 This lab assumes that you have downloaded and renamed a file called
-`my_restaurants.csv` and placed in the same location as this RMarkdown
-file.
+`my_restaurants.csv` and placed it in the same location as this
+RMarkdown file.
 
 ## Reading in a local file
 
@@ -25,7 +25,7 @@ mine <- read_csv("my_restaurants.csv")
 
 Notice that I have called it something short but memorable (`mine`)
 to make it easier to write code about the dataset. Open the file with the
-data viewer (open right hand corner) and check that it matches what you 
+data viewer (open right hand corner) and check that it matches what you
 created.
 
 ### Simple plotting, again
