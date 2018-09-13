@@ -3,7 +3,7 @@ title: "Project I: Data Dictionary, A Week in the Life"
 author: "Taylor Arnold"
 ---
 
-**Due**: 2018-09-25 (start of class)
+**Due**: 2018-09-27 (start of class)
 
 **Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/projects/project-i.Rmd" download="project-i.Rmd" target="_blank">project-i.Rmd</a>
 
@@ -19,18 +19,18 @@ You will be creating three linked datasets with the following information:
 - one dataset where the unit of observation is one hour, indicating what you
 were doing and where you were at the start of the hour. This will have a total
 168 rows (24 * 7) where you will record:
-    - your name (same on every row) 
+    - your name (same on every row)
     - the time
     - activity tag
     - location tag
     - one other variable of your choosing
 - one dataset of places that has variable for:
     - location tag (one match for each record in your hourly dataset)
-    - latitude 
+    - latitude
     - longitude (use Google maps or similar for help with this one)
     - one other variable of your choosing
 - one dataset of activities:
-    - activity tag  
+    - activity tag
     - ranking of how much you enjoy this activity, from 1 (hate it) to 10 (love it)
     - one other variable of your choosing
 
