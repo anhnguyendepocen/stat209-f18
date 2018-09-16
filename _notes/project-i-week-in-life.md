@@ -3,6 +3,9 @@ title: "Project I: Data Dictionary, A Week in the Life"
 author: "Taylor Arnold"
 ---
 
+**[NOTE: DUE TO THE MISSED CLASS, YOUR PROJECT GRADE WILL ALSO BE
+USED IN PLACE OF YOUR FIRST MIDTERM**
+
 **Due**: 2018-09-27 (start of class)
 
 **Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/projects/project-i.Rmd" download="project-i.Rmd" target="_blank">project-i.Rmd</a>
