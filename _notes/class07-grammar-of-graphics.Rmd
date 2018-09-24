@@ -74,20 +74,6 @@ Here there are four specific elements that we had to choose to create the plot:
 3. selecting the variable `life_exp` to appear on the y-axis
 4. choosing to represent the dataset with points by using the `geom_point` layer.
 
-Here, two of our three elements should be clear: the dataset is
-`gapminder_2007` and the plot uses the point geometry (`geom_point`, which we
-have already seen). How do the aesthetic elements function? There are four
-visible aesthetics here, each matched to a particular variable in the dataset:
-
-1. the variable `gdp_per_cap` is mapped to the `x`-axis
-2. the variable `life_exp` is mapped to the `y`-axis
-3. the variable `continent` is mapped to the `color` aesthetic
-4. the variable `pop` is mapped to the `size` aesthetic
-
-The first line sets up a base plot by defining the dataset and indicating which
-variables are associated with the x- and y-axes. To this line we add a geometry that lets
-R know that we want to include points on this plot.
-
 The specific syntax of how to put these elements together is just something that
 you need to learn and memorize. Note that the plus sign goes at the end of the
 first line and the second line is indented by two spaces.
