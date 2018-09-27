@@ -60,9 +60,18 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point(aes(color = continent))
 ```
 
-Or change the size to match the population. Note that R writes the population
-key in scientific notation (2.5e+08 is the same as 2.5 time 10 to the power of
-eight).
+We can also map a continuous variable to color, though the default scale
+is not very nice (more on this in a moment).
+
+```{r}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(aes(color = log(pop)))
+```
+
+
+We could also change the size of the point to match the population. Note that R
+writes the population key in scientific notation (2.5e+08 is the same as 2.5 time
+10 to the power of eight).
 
 ```{r}
 ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
@@ -75,6 +84,81 @@ Or, finally, we could change both the size and color.
 ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point(aes(size = pop, color = continent))
 ```
+
+Notice that R takes care of the specific colors and sizes. All we do is indicate which
+variables are mapped to a given value.
+
+I rarely do this in practice, but it is also  possible to map a variable to a shape:
+
+```{r}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(aes(shape = continent))
+```
+
+## Fixed aesthetics
+
+A very powerful feature of the grammar of graphics is the ability to map a variable to
+a visual aesthetic such as the x- and y-axes or the color and shape. In some cases, 
+though, you may just want to change an aesthetic to a fixed value for all points.
+This can be done as well by specifying the aesthetic **outside** of the `aes()`
+function. For example, here I'll change all of the points to be blue:
+
+```{r}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(color = "blue")
+```
+
+R won't give an error if I put the same code inside of the aes function. Watch
+this:
+
+```{r}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(aes(color = "blue"))
+```
+
+What's happening here?!
+
+You can mix fixed and variable aesthetics in the same plot. For example, here I
+use color to represent the continent but make all the points larger. 
+
+```{r}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(aes(color = continent), size = 3)
+```
+
+Note that the `aes()` part **must** go first. Just another rule you need to remember.
+
+## More plot types
+
+There are some plot types that do not have a specified y-axis. In these cases the
+y-axis is determine by an internal model created by the plot. Two types that we
+will frequently see are `geom_bar` for showing counts of a categorical variable: 
+
+```{r}
+ggplot(gapminder_2007, aes(continent)) +
+  geom_bar()
+```
+
+And `geom_histogram` to show the distribution of a numeric variable:
+
+```{r}
+ggplot(gapminder_2007, aes(life_exp)) +
+  geom_histogram(color = "black", fill = "white")
+```
+
+Notice that I changed two fixed aesthetics in this second plot (I like my choices
+better than the default).
+
+As a common trick with bar plots, I often add the layer `coord_flip` to make the
+bars go left-to-right.
+
+```{r}
+ggplot(gapminder_2007, aes(continent)) +
+  geom_bar() +
+  coord_flip()
+```
+
+If the categories are long, this makes it easier to read them.
 
 ## Scales
 

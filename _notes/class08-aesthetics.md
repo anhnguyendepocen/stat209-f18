@@ -72,9 +72,21 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
 
 <img src="../assets/class08-aesthetics/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
 
-Or change the size to match the population. Note that R writes the population
-key in scientific notation (2.5e+08 is the same as 2.5 time 10 to the power of
-eight).
+We can also map a continuous variable to color, though the default scale
+is not very nice (more on this in a moment).
+
+
+{% highlight r %}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(aes(color = log(pop)))
+{% endhighlight %}
+
+<img src="../assets/class08-aesthetics/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
+
+
+We could also change the size of the point to match the population. Note that R
+writes the population key in scientific notation (2.5e+08 is the same as 2.5 time
+10 to the power of eight).
 
 
 {% highlight r %}
@@ -82,7 +94,7 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point(aes(size = pop))
 {% endhighlight %}
 
-<img src="../assets/class08-aesthetics/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
+<img src="../assets/class08-aesthetics/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
 
 Or, finally, we could change both the size and color.
 
@@ -92,7 +104,109 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point(aes(size = pop, color = continent))
 {% endhighlight %}
 
-<img src="../assets/class08-aesthetics/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
+<img src="../assets/class08-aesthetics/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+
+Notice that R takes care of the specific colors and sizes. All we do is indicate which
+variables are mapped to a given value.
+
+I rarely do this in practice, but it is also  possible to map a variable to a shape:
+
+
+{% highlight r %}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(aes(shape = continent))
+{% endhighlight %}
+
+<img src="../assets/class08-aesthetics/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
+
+## Fixed aesthetics
+
+A very powerful feature of the grammar of graphics is the ability to map a variable to
+a visual aesthetic such as the x- and y-axes or the color and shape. In some cases, 
+though, you may just want to change an aesthetic to a fixed value for all points.
+This can be done as well by specifying the aesthetic **outside** of the `aes()`
+function. For example, here I'll change all of the points to be blue:
+
+
+{% highlight r %}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(color = "blue")
+{% endhighlight %}
+
+<img src="../assets/class08-aesthetics/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
+
+R won't give an error if I put the same code inside of the aes function. Watch
+this:
+
+
+{% highlight r %}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(aes(color = "blue"))
+{% endhighlight %}
+
+<img src="../assets/class08-aesthetics/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
+
+What's happening here?!
+
+You can mix fixed and variable aesthetics in the same plot. For example, here I
+use color to represent the continent but make all the points larger. 
+
+
+{% highlight r %}
+ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
+  geom_point(aes(color = continent), size = 3)
+{% endhighlight %}
+
+<img src="../assets/class08-aesthetics/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="100%" />
+
+Note that the `aes()` part **must** go first. Just another rule you need to remember.
+
+## More plot types
+
+There are some plot types that do not have a specified y-axis. In these cases the
+y-axis is determine by an internal model created by the plot. Two types that we
+will frequently see are `geom_bar` for showing counts of a categorical variable: 
+
+
+{% highlight r %}
+ggplot(gapminder_2007, aes(continent)) +
+  geom_bar()
+{% endhighlight %}
+
+<img src="../assets/class08-aesthetics/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
+
+And `geom_histogram` to show the distribution of a numeric variable:
+
+
+{% highlight r %}
+ggplot(gapminder_2007, aes(life_exp)) +
+  geom_histogram(color = "black", fill = "white")
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+{% endhighlight %}
+
+<img src="../assets/class08-aesthetics/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" />
+
+Notice that I changed two fixed aesthetics in this second plot (I like my choices
+better than the default).
+
+As a common trick with bar plots, I often add the layer `coord_flip` to make the
+bars go left-to-right.
+
+
+{% highlight r %}
+ggplot(gapminder_2007, aes(continent)) +
+  geom_bar() +
+  coord_flip()
+{% endhighlight %}
+
+<img src="../assets/class08-aesthetics/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="100%" />
+
+If the categories are long, this makes it easier to read them.
 
 ## Scales
 
@@ -107,7 +221,7 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   scale_color_viridis()
 {% endhighlight %}
 
-<img src="../assets/class08-aesthetics/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+<img src="../assets/class08-aesthetics/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="100%" />
 
 The viridis color pallet is optimized for readability for people who are color blind.
 It also improves the plot when printed in black and white or projected on a badly

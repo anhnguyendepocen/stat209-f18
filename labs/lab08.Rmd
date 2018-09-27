@@ -7,6 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(readr)
 library(ggplot2)
+library(ggrepel)
 library(dplyr)
 library(smodels)
 theme_set(theme_minimal())
@@ -27,8 +28,7 @@ miles per gallon of the car while driving in stop-and-go city traffic. Likewise,
 `hwy` is the miles per gallon for a car on the highway.
 
 Start by making a scatter plot (i.e., points) of engine size on the x-axis and the
-highway fuel efficiency on the y-axis. (In case this wasn't clear, write the code in
-the block below and verify that the plot looks as expected)
+highway fuel efficiency on the y-axis.
 
 ```{r}
 
@@ -126,5 +126,54 @@ And add `scale_color_viridis()` to the plot:
 ```
 
 It should look much more readable. Do you notice any patterns now?
+
+## Project I data
+
+Now, put the three csv files that you created for Project I into the lab folder.
+Make sure they are named `activities.csv`, `places.csv`, and `hourly.csv`. We
+will work with these a bit over the next few labs.
+
+Read in the hourly and places dataset:
+
+```{r}
+hourly <- read_csv("hourly.csv")
+places <- read_csv("places.csv")
+```
+
+Now, make use of `left_join` to combine the two datasets (see lab06
+for help if you forgot how to do this) and overwrite the dataset
+named hourly:
+
+```{r}
+
+```
+
+Create a plot of longitude and latitude using a `geom_point` layer
+(you'll want longitude on the x-axis):
+
+```{r}
+
+```
+
+Now, repeat the plot and add a `geom_path` layer. This connects the dots in
+the order they are given in the dataset:
+
+```{r}
+
+```
+
+In order for us to know what the data points are, add another `geom_text`
+label with a label equal to the location name:
+
+```{r}
+
+```
+
+Finally, make a bar plot or histogram, whichever is most appropriate, for
+the variable that you added to the hourly dataset.
+
+```{r}
+
+```
 
 
