@@ -23,20 +23,41 @@ hourly data.
 ```{r}
 hourly <- read_csv("hourly.csv")
 places <- read_csv("places.csv")
+activities <- read_csv("activities.csv")
 hourly <- left_join(hourly, places)
+hourly <- left_join(hourly, activities)
 ```
 
-Now, filter the hourly dataset to create
+It's possible that in converting your data into excel or Google Sheets that the
+time variable became too messy for R to read correctly. This line should fix 
+things:
+
+```{r}
+start <- as.POSIXct("2018-09-17 00:00")
+end <- start + as.difftime(7, units="days")
+hourly$hour <- seq(from=start, by=60*60, to=end)[seq_len(nrow(hourly))]
+```
+
+Now, these create three filtered datasets from `hourly`:
+
+- `hourly_week`: select only data from Monday at midnight through Friday at 5pm
+- `hourly_tornado`: select only data from Monday at 3pm until Monday at 6pm
+- `hourly_fav`: select whatever your favorite 1-3 hours of the entire week were
+
+In the code chunk below (you can do this all in the same code block):
 
 ```{r}
 
 ```
 
+Then, conctruct a plot with `hour` on the x-axis and `score` on the y-axis using
+a `geom_line` layer. Then, add an extra point layer that shows the points in
+`hourly_tornado` in red. Finally, add a text annotation that tells readers of the
+plot what happened during the red period.
 
+```{r}
 
-
-
-
+```
 
 ## Pick a dataset
 
