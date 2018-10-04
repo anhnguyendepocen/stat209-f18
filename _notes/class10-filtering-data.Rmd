@@ -17,7 +17,9 @@ knitr::opts_chunk$set(dpi = 300)
 library(readr)
 library(dplyr)
 library(smodels)
+library(viridis)
 library(ggplot2)
+library(ggmap)
 theme_set(theme_minimal())
 ```
 
@@ -164,6 +166,41 @@ flights_xmas_night
 
 This will be useful if you want to subset the data you had from the first
 project.
+
+## Using ggmap
+
+As a final note today, let's look at the **ggmap** package for ploting spatial data.
+First, read in the dataset of airports (I'll also filter out some airports in strange
+places):
+
+```{r, message=FALSE}
+airports <- read_csv("https://statsmaths.github.io/stat_data/f_airports.csv")
+airports <- filter(airports, between(tz, -8, -5))
+airports <- filter(airports, lat < 50)
+airports
+```
+
+Now, if we want to plot the locations of all of the airports, read in the **ggmap** package:
+
+```{r}
+library(ggmap)
+```
+
+To construct a map plot, use the following line in place of your usual call to **ggplot**:
+
+```{r, message=FALSE, error=FALSE, warning=FALSE}
+qmplot(lon, lat, data = airports, geom="blank")
+```
+
+Then, you can add points or text as usual:
+
+```{r, message=FALSE, error=FALSE, warning=FALSE}
+qmplot(lon, lat, data = airports, geom="blank") +
+  geom_point(color = "salmon", size = 0.5) 
+```
+
+I really like spatial data and think the idea behind **ggmap** is great. However, I'll admit
+that the package is not very well written or maintained, so your mileage may vary.
 
 
 

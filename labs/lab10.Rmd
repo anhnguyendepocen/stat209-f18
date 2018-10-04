@@ -8,15 +8,40 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readr)
 library(ggplot2)
 library(dplyr)
+library(viridis)
+library(ggmap)
+library(dplyr)
 library(smodels)
 theme_set(theme_minimal())
 ```
 
+## Filtering the class dataset
+
+To start, read in your project datasets and join the places information to the
+hourly data.
+
+```{r}
+hourly <- read_csv("hourly.csv")
+places <- read_csv("places.csv")
+hourly <- left_join(hourly, places)
+```
+
+Now, filter the hourly dataset to create
+
+```{r}
+
+```
+
+
+
+
+
+
 
 ## Pick a dataset
 
-Today you will again have a choice of three datasets to work with. You can
-choose either to investigate the daily team ELO ratings in the NBA:
+For the remainder of this lab, you choice of three datasets to work with.
+You can choose either to investigate the daily team ELO ratings in the NBA:
 
 ```{r}
 nba <- read_csv("https://statsmaths.github.io/stat_data/nba_elo_daily.csv")

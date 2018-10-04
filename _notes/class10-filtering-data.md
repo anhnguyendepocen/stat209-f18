@@ -336,5 +336,67 @@ flights_xmas_night
 This will be useful if you want to subset the data you had from the first
 project.
 
+## Using ggmap
+
+As a final note today, let's look at the **ggmap** package for ploting spatial data.
+First, read in the dataset of airports (I'll also filter out some airports in strange
+places):
+
+
+{% highlight r %}
+airports <- read_csv("https://statsmaths.github.io/stat_data/f_airports.csv")
+airports <- filter(airports, between(tz, -8, -5))
+airports <- filter(airports, lat < 50)
+airports
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 1,195 x 8
+##    faa   name                   lat    lon   alt    tz dst   tzone        
+##    <chr> <chr>                <dbl>  <dbl> <int> <int> <chr> <chr>        
+##  1 04G   Lansdowne Airport     41.1  -80.6  1044    -5 A     America/New_…
+##  2 06A   Moton Field Municip…  32.5  -85.7   264    -6 A     America/Chic…
+##  3 06C   Schaumburg Regional   42.0  -88.1   801    -6 A     America/Chic…
+##  4 06N   Randall Airport       41.4  -74.4   523    -5 A     America/New_…
+##  5 09J   Jekyll Island Airpo…  31.1  -81.4    11    -5 A     America/New_…
+##  6 0A9   Elizabethton Munici…  36.4  -82.2  1593    -5 A     America/New_…
+##  7 0G6   Williams County Air…  41.5  -84.5   730    -5 A     America/New_…
+##  8 0G7   Finger Lakes Region…  42.9  -76.8   492    -5 A     America/New_…
+##  9 0P2   Shoestring Aviation…  39.8  -76.6  1000    -5 U     America/New_…
+## 10 0S9   Jefferson County In…  48.1 -123.    108    -8 A     America/Los_…
+## # ... with 1,185 more rows
+{% endhighlight %}
+
+Now, if we want to plot the locations of all of the airports, read in the **ggmap** package:
+
+
+{% highlight r %}
+library(ggmap)
+{% endhighlight %}
+
+To construct a map plot, use the following line in place of your usual call to **ggplot**:
+
+
+{% highlight r %}
+qmplot(lon, lat, data = airports, geom="blank")
+{% endhighlight %}
+
+<img src="../assets/class10-filtering-data/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="100%" />
+
+Then, you can add points or text as usual:
+
+
+{% highlight r %}
+qmplot(lon, lat, data = airports, geom="blank") +
+  geom_point(color = "salmon", size = 0.5) 
+{% endhighlight %}
+
+<img src="../assets/class10-filtering-data/unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="100%" />
+
+I really like spatial data and think the idea behind **ggmap** is great. However, I'll admit
+that the package is not very well written or maintained, so your mileage may vary.
+
 
 
