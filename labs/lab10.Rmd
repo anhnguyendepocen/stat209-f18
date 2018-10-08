@@ -29,7 +29,7 @@ hourly <- left_join(hourly, activities)
 ```
 
 It's possible that in converting your data into excel or Google Sheets that the
-time variable became too messy for R to read correctly. This line should fix 
+time variable became too messy for R to read correctly. This line should fix
 things:
 
 ```{r}
