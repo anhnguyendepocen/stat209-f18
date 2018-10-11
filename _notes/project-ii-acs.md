@@ -3,7 +3,9 @@ title: "Project II: Visualizing Communities"
 author: "Taylor Arnold"
 ---
 
-**Due**: 2018-10-18 (start of class)
+**Due**: 2018-10-23 (start of class)
+
+**Draft**: 2018-10-18 (three finished graphs; start of class)
 
 **Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/projects/project-ii.Rmd" download="project-ii.Rmd" target="_blank">project-ii.Rmd</a>
 
@@ -17,7 +19,7 @@ structure of the report is much more open ended compared to the first project.
 
 For this project we will all be working off of the same master dataset. The
 data gives demographic information about [census tracts](https://en.wikipedia.org/wiki/Census_tract). You will each, however, be looking at different metropolitan
-areas in the United States. 
+areas in the United States.
 
 Your task is to write a short essay in the style of a 538 news article.
 The essay should describe one or more interesting elements you discovered
@@ -40,7 +42,7 @@ meaningful way rather than all included at the start or end of the essay.
 
 The grade for the assignment depends primarily on the effectiveness of the
 graphics in conveying information, the quality of the writing, and execution
-of how the writing and visualizations are integrated together. 
+of how the writing and visualizations are integrated together.
 
 ## Code Examples
 
@@ -86,4 +88,43 @@ acs$max_race_category <- names(temp)[apply(temp, 1, which.max)]
 ```
 
 It should be clear how to modify this for other variables (but if not, please ask!).
+
+## ggmap
+
+Many of you, myself included, ran into errors with the **ggmap** package. If you
+want to make maps, I suggest running this command in RStudio (just once):
+
+```{r}
+devtools::install_github("dkahle/ggmap")
+```
+
+Then, remove this line and restart R. You should be able to make plots as given in
+the course notes.
+
+## Hints
+
+Here are some hints if you are still stuck on telling a story:
+
+1. Try looking at the household income variables. These are in dollars, not
+percentages, and often have stronger more obvious relationships to the other
+variables.
+2. Try to create a max category for one of the clusters of variables. Try plotting
+using categories as colors on a map. If almost all of the points have the same
+category, try to instead use the percentage of this max category as a measurement.
+For example, if almost all tracts have `race_white` as the largest category, then
+try to look at the `race_white` variable. If the there is a nice mix of categories,
+try to use the variable directly.
+3. If you have a variable of interest, try creating a confidence interval (`geom_confint`)
+plot by counties. You could also try using the `max_` categories if they are interesting.
+4. Generally, you don't want to use multiple variables from the same section (not including
+the income variables). Either collapse categories, use the `max_` categories trick, or
+pick just one that interests you.
+5. You do not need to have three different kinds of plots, but thinking about three
+types can make the project easier. A map, a scatter plot, and a confidence interval plot
+can often be used to together to great effect.
+
+
+
+
+
 
