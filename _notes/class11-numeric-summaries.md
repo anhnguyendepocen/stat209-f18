@@ -16,18 +16,6 @@ output: html_notebook
 a numeric variable.
 - Plot group-wise summary statistics using a violin or boxplot.
 
-## Mid-course survey summary
-
-Thank you all again for filling out the mid-course review forms. They were
-very helpful for me in planning the notes for the remainder of the semester.
-Some themes I saw:
-
--
-
-Additionally, I did take other one-off comments that were made under
-consideration even if not listed here. If you have any other comments or
-concerns, please still let me know!
-
 ## Motivation
 
 Graphics are an excellent way of summarizing and
@@ -113,7 +101,7 @@ sum(msleep$awake) / nrow(msleep)
 {% endhighlight %}
 
 Note, I am showing in the second line a description of what the mean is doing
-and verifying that it works. Do **not** coyp and use the second form in your
+and verifying that it works. Do **not** copy and use the second form in your
 work.
 
 ## Quantiles
@@ -135,17 +123,17 @@ deciles(msleep$awake)
 {% endhighlight %}
 
 This shows that about 1/2 of the mammals are awake less than 14.20 hours and about
-1/2 are awake more than 14.20. I use the word "about" here due to subtitles
+1/2 are awake more than 14.20. I use the word "about" here due to subtleties
 regarding ties and repeated values; for all practical purposes this is generally not
-important. Note that the 50% percentile has a special name that you have probably heard
-before: the *median*.
-
-Similarly, we see that roughly 1/10 of the mammals are
+important. Similarly, we see that roughly 1/10 of the mammals are
 awake less than 8.12 hours and 1/10 are awake less than 20.8 hours. We also see
 that the sleepiest mammal is awake for only 4.1 hours and that one mammal is awake
 22.1 hours of the day.
 
-We can similarly calculate what are called quartiles, splitting the data into
+Note that the 50% percentile has a special name that you have probably heard
+before: the *median*.
+
+We can also calculate what are called quartiles, splitting the data into
 four equally sized groups using the `quartiles` function:
 
 
@@ -321,21 +309,6 @@ sd(msleep$awake)
 ## [1] 4.479392
 {% endhighlight %}
 
-Or, we can take out the `group_summarize` function to compute the
-standard deviation of the awake variable by the type of mammal:
-
-
-{% highlight r %}
-food_type <- group_summarize(msleep, vore)
-ggplot(food_type, aes(vore, awake_sd)) +
-  geom_point(size = 3)
-{% endhighlight %}
-
-<img src="../assets/class11-numeric-summaries/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
-
-Where we see that omnivores have more consistent hours spent sleeping and insectivores
-have the largest variation of sleeping hours per day.
-
 ## Graphing Variation
 
 Finally, we can use these measurments of distribution and variation in graphical
@@ -354,7 +327,7 @@ ggplot(msleep, aes(vore, awake)) +
   geom_boxplot()
 {% endhighlight %}
 
-<img src="../assets/class11-numeric-summaries/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" />
+<img src="../assets/class11-numeric-summaries/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
 
 Similarly, a violin plot is a newer twist on the boxplot that attempts to show
 more details about the distribution by varying its width with the distribution
@@ -366,5 +339,135 @@ ggplot(msleep, aes(vore, awake)) +
   geom_violin()
 {% endhighlight %}
 
-<img src="../assets/class11-numeric-summaries/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="100%" />
+<img src="../assets/class11-numeric-summaries/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" />
 
+### Changing the Unit of Observation
+
+Often, it is useful to change the unit of observation within a dataset.
+The most common way of doing this is to group the dataset by a combination
+of variables and aggregate the numeric variables by taking sums, means, or
+some other summary statistics. Some common examples include:
+
+- aggregating individual shot attempts in soccer to summary statistics about each player
+- aggregating census tract data to a county or state level
+- aggregating information about individual patients to summaries about demographic groups
+
+We have seen a few simple ways of doing this already within a plot (such as
+counting occurances in a group with `geom_bar`). Now, we will see how to do this
+with the `group_summarize` command.
+
+### Summarizing data
+
+The group summarize command comes from the **smodels** package. Applying it to a
+dataset with no additional options yields a new dataset with just a single line.
+Variables in the new dataset summarize the numeric variables in the raw data.
+
+
+{% highlight r %}
+msleep_line <- group_summarize(msleep)
+msleep_line
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 1 x 21
+##   sleep_total_mean sleep_rem_mean awake_mean brainwt_mean bodywt_mean
+##              <dbl>          <dbl>      <dbl>        <dbl>       <dbl>
+## 1             10.4           1.92       13.6        0.118        47.3
+## # ... with 16 more variables: sleep_total_median <dbl>,
+## #   sleep_rem_median <dbl>, awake_median <dbl>, brainwt_median <dbl>,
+## #   bodywt_median <dbl>, sleep_total_sd <dbl>, sleep_rem_sd <dbl>,
+## #   awake_sd <dbl>, brainwt_sd <dbl>, bodywt_sd <dbl>,
+## #   sleep_total_sum <dbl>, sleep_rem_sum <dbl>, awake_sum <dbl>,
+## #   brainwt_sum <dbl>, bodywt_sum <dbl>, n <int>
+{% endhighlight %}
+
+Specifically, we see the following summaries for each numeric variable (the new names add a suffix
+to the original variable name):
+
+- `mean`: the average of all the observations
+- `median`: if we ordered all observations from smallest to largest, the middle value
+- `sd`: the standard deviation, a measurment of how much the number varies across observations (more on this after the break)
+- `sum`: the sum of all the observations
+
+There is also a variable just called `n` at the end, giving the total number of observations in
+the entire dataset.
+
+### Group Summarize
+
+The magic of the `group_summarize` command comes from specifying other variables in function call.
+If we specify a grouping variable, here I'll use `vore`, the summarizing will be done *within*
+each category. So, here, the new dataset has 12 rows with each row summarizing a given diet type:
+
+
+{% highlight r %}
+msleep_vore <- group_summarize(msleep, vore)
+print(msleep_vore, n = 12)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 4 x 22
+##   vore  sleep_total_mean sleep_rem_mean awake_mean brainwt_mean bodywt_mean
+##   <chr>            <dbl>          <dbl>      <dbl>        <dbl>       <dbl>
+## 1 carni            10.4            2.4       13.6        0.0832        18.7
+## 2 herbi             8.14           1.23      15.9        0.126        101. 
+## 3 inse…            16.5            3.52       7.48       0.0207        15.0
+## 4 omni             11.1            2.03      12.9        0.146         14.6
+## # ... with 16 more variables: sleep_total_median <dbl>,
+## #   sleep_rem_median <dbl>, awake_median <dbl>, brainwt_median <dbl>,
+## #   bodywt_median <dbl>, sleep_total_sd <dbl>, sleep_rem_sd <dbl>,
+## #   awake_sd <dbl>, brainwt_sd <dbl>, bodywt_sd <dbl>,
+## #   sleep_total_sum <dbl>, sleep_rem_sum <dbl>, awake_sum <dbl>,
+## #   brainwt_sum <dbl>, bodywt_sum <dbl>, n <int>
+{% endhighlight %}
+
+This dataset can then be used in further visualizations. 
+
+### Summarize By Multiple Variables
+
+By supplying multiple variables to the `group_summarize` command, we can group simultaneously by both.
+Here we have a unique row for each combination of `vore` and `order`:
+
+
+{% highlight r %}
+msleep_order <- group_summarize(msleep, vore, order)
+msleep_order
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 18 x 23
+##    vore  order sleep_total_mean sleep_rem_mean awake_mean brainwt_mean
+##    <chr> <chr>            <dbl>          <dbl>      <dbl>        <dbl>
+##  1 carni Carn…             8.98          2.26       15.0      0.0977  
+##  2 carni Cing…            17.4           3.1         6.6      0.0108  
+##  3 herbi Arti…             4.37          0.633      19.6      0.238   
+##  4 herbi Hyra…             5.8           0.55       18.2      0.0123  
+##  5 herbi Lago…             8.4           0.9        15.6      0.0121  
+##  6 herbi Peri…             3.47          0.667      20.5      0.414   
+##  7 herbi Rode…            12.4           1.96       11.6      0.00291 
+##  8 inse… Chir…            19.8           2.95        4.20     0.000275
+##  9 inse… Cing…            18.1           6.1         5.9      0.081   
+## 10 inse… Sori…             8.4           2.1        15.6      0.00120 
+## 11 omni  Afro…            15.6           2.3         8.4      0.0026  
+## 12 omni  Arti…             9.1           2.4        14.9      0.18    
+## 13 omni  Dide…            18             4.9         6        0.0063  
+## 14 omni  Erin…            10.1           3.5        13.9      0.0035  
+## 15 omni  Prim…            10.6           1.36       13.4      0.284   
+## 16 omni  Rode…             8.3           2          15.7      0.0066  
+## 17 omni  Scan…             8.9           2.6        15.1      0.0025  
+## 18 omni  Sori…            11.4           1.97       12.6      0.000477
+## # ... with 17 more variables: bodywt_mean <dbl>, sleep_total_median <dbl>,
+## #   sleep_rem_median <dbl>, awake_median <dbl>, brainwt_median <dbl>,
+## #   bodywt_median <dbl>, sleep_total_sd <dbl>, sleep_rem_sd <dbl>,
+## #   awake_sd <dbl>, brainwt_sd <dbl>, bodywt_sd <dbl>,
+## #   sleep_total_sum <dbl>, sleep_rem_sum <dbl>, awake_sum <dbl>,
+## #   brainwt_sum <dbl>, bodywt_sum <dbl>, n <int>
+{% endhighlight %}
+
+As you can imagine, summarizing data can quickly allow for very complex
+graphics and analyses.

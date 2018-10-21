@@ -9,6 +9,7 @@ library(readr)
 library(ggplot2)
 library(dplyr)
 library(smodels)
+library(ggrepel)
 theme_set(theme_minimal())
 ```
 
@@ -112,7 +113,7 @@ With variables:
 - num_reviews: total number of online reviews
 
 Draw a scatterplot with num_reviews (x-axis) against score (y-axis) and add a
-regression line (recall: `geom_smooth(method="lm")`).
+regression line (recall: `geom_bestfit()`).
 
 ```{r}
 
@@ -164,8 +165,10 @@ as the entire dataset?
 
 **Answer**:
 
-Summarize the dataset by the type of tea and save the results as a variable
-named `tea_type`.
+### Group summarize
+
+Now, make use of the group summarize command. Summarize the dataset by the
+type of tea and save the results as a variable named `tea_type`.
 
 ```{r}
 
@@ -173,8 +176,9 @@ named `tea_type`.
 
 Plot the average price (x-axis) against the average score (y-axis) of
 each type  of tea. Make the size of the points proportional to the number
-of teas in each category and label the points with geom_text_repel and the
-tea type.
+of teas in each category and label the points with `geom_text_repel` (it is
+used like `geom_text` but will produce a better looking output here) using the
+tea type as the label.
 
 ```{r}
 
