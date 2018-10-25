@@ -139,7 +139,7 @@ reg_table(model, level = 0.9)
 {% endhighlight %}
 
 The table now includes two additional numbers of the mean: the
-10th and 90th percentiles of a *confidence interval*. A confidence
+5th and 95th percentiles of a *confidence interval*. A confidence
 interval provides a guess for where the **true** mean, defined in either
 of the ways described as above, actually lies. The construction of
 a confidence interval involves some surprisingly deep mathematics,
@@ -200,7 +200,4 @@ reg_table(model, level = 0.95)
 
 Unless we have a specific reason to use a different level, we will
 usually use a 95% confidence interval in this course.
-
-
-
 
