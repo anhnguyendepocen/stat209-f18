@@ -214,7 +214,27 @@ ggplot(msleep_nona, aes(vore, awake)) +
 
 <img src="../assets/class13-inference-several-means/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
 
+You'll notice that this not exactly the same output. The interval for carnivores matches
+well, but the one for insectivores is much wider in this model than in the `lm_basic` output.
+I do not want to get too into the weeds about why this is, other it has to do with the fact
+that there are very few insectivores:
 
+
+{% highlight r %}
+table(msleep$vore)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+##   carni   herbi insecti    omni 
+##      19      32       5      20
+{% endhighlight %}
+
+The `lm_basic` model assumes that all of the data has the same standard deviation, whereas the
+graphical model estimates the variation for each group. In most cases the difference is small,
+but when we do not have much data there can be sizeable differences.
 
 ## Model Fit
 
