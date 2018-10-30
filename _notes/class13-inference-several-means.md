@@ -10,6 +10,7 @@ output: html_notebook
 
 ## Learning Objectives
 
+- Apply the `lm_basic` command to compare the means of two groups
 - Extend the two-sample t-test to multiple groups
 - Apply model-fit metrics to a regression analysis
 
@@ -112,6 +113,9 @@ that the mean of the two cups is different... Think about this
 statement for a bit. Why would a value of zero be important in
 this model?
 
+**Note**: I'm not calling it this in these notes, but just so you are aware
+the statistical model we are applying is called a "t-test". 
+
 ## Comparing Three Categories
 
 Let's apply this to a more complex situation using the mammals sleep
@@ -194,6 +198,23 @@ reg_table(model, level = 0.95)
 {% endhighlight %}
 
 Now everything is compared to the `insecti` category.
+
+## Graphing the model
+
+Coming back to graphics, notice that we can see the same output using a visual
+representation of the data. All we need is the `geom_confint` layer (I had to
+remove some missing data before running the plot):
+
+
+{% highlight r %}
+msleep_nona <- filter(msleep, !is.na(vore))
+ggplot(msleep_nona, aes(vore, awake)) +
+  geom_confint()
+{% endhighlight %}
+
+<img src="../assets/class13-inference-several-means/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+
+
 
 ## Model Fit
 

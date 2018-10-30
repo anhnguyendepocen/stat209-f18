@@ -52,7 +52,6 @@ dataset and look at the model using `reg_table`:
 
 ```
 
-
 The average Yelp score of all restaurants in this area is just 3.7; looking
 at the confidence interval from the model does it seem likely that burrito
 locations have a higher Yelp rating than locations in general, or is this
@@ -60,7 +59,7 @@ just noise in the data?
 
 **Answer**:
 
-The regression model confidence interval requires that the data are sampling
+The regression model confidence interval requires that the data are sampled
 independently from the larger population. Why might this dataset not hold to
 this assumption?
 
@@ -73,12 +72,12 @@ whether the burrito includes chips.
 
 ```
 
-Describe what the slope coefficient in the previous model really means
-in terms of the data:
+Describe what the chips coefficient in the previous model means in words:
 
 **Answer**:
 
-Is the slope coefficient statistically significant (compared to zero)?
+Is the slope coefficient statistically significant from zero (in other words,
+is zero in the confidence interval)?
 
 **Answer**:
 
@@ -138,7 +137,10 @@ high synergy?
 **Answer**:
 
 Finally, fit a regression model that predicts the overall score as a function
-of the variable `synergy` coded as a factor.
+of the variable `synergy` coded as a factor. That is, use
+`overall ~ factor(synergy)` in the formula. We are doing this so that each
+value of the synergy score (1, 2, 3, 4, and 5) are treated as a category rather
+than a continuous variable.
 
 ```{r}
 
@@ -148,5 +150,12 @@ What does the model predict the overall score for a restaurant with a
 synergy score of 3 will be?
 
 **Answer**:
+
+Finally, draw a plot that corresponds to the model you just produced for the
+synergy score. Hint: You'll need the `geom_confint` layer.
+
+```{r}
+
+```
 
 
