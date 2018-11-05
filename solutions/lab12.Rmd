@@ -1,0 +1,132 @@
+---
+title: "Lab 12: Inference for the Mean"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+
+## Teacher Salary
+
+We will start today by looking at a small dataset containing teacher
+salaries from 2009-2010 for 71 randomly choosen teachers employed by the
+St. Louis Public School in in Michigan.
+
+```{r}
+teachers <- read_csv("https://statsmaths.github.io/stat_data/teachers_pay.csv")
+```
+
+The available variables are
+
+- base: Base annual salary, in dollars
+- degree: Highest educational degree attained: BA (Bachelor's) or MA (Master's)
+- years: Number of years employeed
+
+Using the mean function, what is the average base pay of all teachers
+in the dataset?
+
+```{r}
+mean(teachers$base)
+```
+
+Fit a model for the mean of the base pay variable using lm_basic. Save
+the model as an object called "model":
+
+```{r}
+model <- lm_basic(base ~ 1, data = teachers)
+```
+
+Using a call to `reg_table`, find the mean implied by the model:
+
+```{r}
+reg_table(model)
+```
+
+Does the mean agree with your answer to question 2?
+
+**Answer**: Yes.
+
+Add a 95% confidence interval to the regression table.
+
+```{r}
+reg_table(model, level = 0.95)
+```
+
+What is the range of mean salaries implied by the confidence interval?
+
+**Answer**:
+
+Draw a histogram of the base salary values for the entire dataset.
+
+```{r}
+ggplot(teachers, aes(base)) +
+  geom_histogram(color = "black", fill = "white", bins = 20)
+```
+
+Do most of the salary values fall within the range given in question 5? Why
+or why not?
+
+**Answer**: No, because the confidence interval is trying to capture the mean,
+not the data.
+
+Use the filter command to construct a new dataset called `masters` consisting
+of just those teachers with a masters degree.
+
+```{r}
+masters <- filter(teachers, degree == "MA")
+```
+
+Compute a 95% confidence interval for the mean pay of teachers with a master's
+degree. Does this range intersect the one you had in question 5?
+
+```{r}
+model <- lm_basic(base ~ 1, data = masters)
+reg_table(model, level = 0.95)
+```
+
+**Answer**: The range intersects, but is not equivalent, to the range in the 
+model with all teachers.
+
+## Murder Data
+
+Now load the following dataset containing all murders that have occurred in
+London from 1 January 2006 to 7 September 7 2011.
+
+```{r}
+london <- read_csv("https://statsmaths.github.io/stat_data/london_murders.csv")
+```
+
+The available variables are:
+
+- age: age of the victim in years
+- year: year of the murder
+- borough: the London borough in which the murder took place
+
+Find an 80% confidence interval for the average age of the victim of a
+murder in London.
+
+```{r}
+model <- lm_basic(age ~ 1, data = london)
+reg_table(model, level = 0.8)
+```
+
+Make sure you actually extract the answer here:
+
+**Answer**: The interval is from 33.07 to 34.65 years.
+
+Describe in words how the proceeding confidence interval should be
+interpreted.
+
+**Answer**: We are using a procedure that, if applied to multiple datasets,
+would capture the true mean 80% of the time. This procedure found a range
+from 33.07 to 34.65 years.
+
+
+

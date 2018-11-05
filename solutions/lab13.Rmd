@@ -1,0 +1,172 @@
+---
+title: "Lab 13: Inference for Several Means"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(forcats)
+library(ggplot2)
+library(dplyr)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+
+## Burrito synergy in SoCal
+
+Today we will look at a dataset of reviews of burritos in southern
+California. This is a data set collected by a group of college friends who
+live in the greater San Diego area.
+
+```{r}
+burrito <- read_csv("https://statsmaths.github.io/stat_data/burrito.csv")
+```
+
+The available variables in the data are:
+
+- location: the name of the restaurant
+- cost: total cost for the burrito
+- yelp: the average Yelp review score
+- google: the average Google review score
+- chips_included: equals 1 if chips are included with the burrito
+- hunger: score from 1 to 5 on how much the burrito filled up the reviewer
+- tortilla: rating from reviewer; 1 (terrible) to 5 (awesome)
+- temp: rating from reviewer; 1 (terrible) to 5 (awesome)
+- meat: rating from reviewer; 1 (terrible) to 5 (awesome)
+- fillings: rating from reviewer; 1 (terrible) to 5 (awesome)
+- meat_filling: rating from reviewer; 1 (terrible) to 5 (awesome)
+- uniformity: rating from reviewer; 1 (terrible) to 5 (awesome)
+- salsa: rating from reviewer; 1 (terrible) to 5 (awesome)
+- synergy: rating from reviewer; 1 (terrible) to 5 (awesome)
+- wrap: rating from reviewer; 1 (terrible) to 5 (awesome)
+- overall: rating from reviewer; 1 (terrible) to 5 (awesome)
+- lat: latitude (in degrees North) of the taco restaurant
+- lon: longitude (in degrees East) of the taco restaurant
+
+Fit a linear regression predicting the average yelp score of locations in this
+dataset and look at the model using `reg_table`:
+
+```{r}
+model <- lm_basic(yelp ~ 1, data = burrito)
+reg_table(model, level = 0.95)
+```
+
+The average Yelp score of all restaurants in this area is just 3.7; looking
+at the confidence interval from the model does it seem likely that burrito
+locations have a higher Yelp rating than locations in general, or is this
+just noise in the data?
+
+**Answer**: No, it seems like they intentionally selected restaurants with
+good yelp scores.
+
+The regression model confidence interval requires that the data are sampled
+independently from the larger population. Why might this dataset not hold to
+this assumption?
+
+**Answer**: They likely only selected good restaurants or those that were close
+to where they lived.
+
+Now fit a linear regression that predicts the yelp score as a function of
+whether the burrito includes chips.
+
+```{r}
+model <- lm_basic(yelp ~ chips_included, data=burrito)
+reg_table(model, level = 0.95)
+```
+
+Describe what the chips coefficient in the previous model means in words:
+
+**Answer**: Its the additional amount that you would expect a restaurant
+that includes chips with their burritos to have as a yelp score.
+
+Is the slope coefficient statistically significant from zero (in other words,
+is zero in the confidence interval)?
+
+**Answer**: No, it runs from -0.20652 to 0.320 (a negative to a positive value).
+
+Describe this in terms of your answers above.
+
+**Answer**: There does not seem to be a statistically significant difference in the
+Yelp score based on whether chips are included with the burrito.
+
+The word *synergy* can be defined as:
+
+> the interaction or cooperation of two or more organizations, substances,
+> or other agents to produce a combined effect greater than the sum of
+> their separate effects.
+
+This is not something I would have thought of when considering tacos, but
+let's see how synergy effected the scores of both the reviewers as well as
+Google and Yelp users in general.
+
+First, I'll add a variable called high_synergy defined as whether the synergy
+score is greater than 3.5.
+
+```{r}
+burrito$high_synergy <- (burrito$synergy > 3.5)
+```
+
+Fit a regression predicting the Yelp score as a function of the
+variable `high_synergy`.
+
+```{r}
+model <- lm_basic(yelp ~ high_synergy, data = burrito)
+reg_table(model, level = 0.95)
+```
+
+Is there strong evidence that Yelp scores are higher for high synergy burrito
+restaurants?
+
+**Answer**: No, again the confidence interval extends from a negative value to
+a positive one.
+
+Now fit a regression predicting the overall score as a function of the
+variable high_synergy.
+
+```{r}
+model <- lm_basic(overall ~ high_synergy, data = burrito)
+reg_table(model, level = 0.95)
+```
+
+Is there evidence that high synergy burrito locations have a higher overall
+score than low synergy burrito locations?
+
+**Answer**: Yes! The confidence interval runs from 0.87 to 1.465.
+
+Using the model from the previous question, what does the model predict
+will be the overall score of a location with low synergy?
+
+**Answer**: 2.69.
+
+What does the model predict will be the overall score of a location with
+high synergy?
+
+**Answer**: 2.69 + 1.1678 = `r 2.69 + 1.1678`.
+
+Finally, fit a regression model that predicts the overall score as a function
+of the variable `synergy` coded as a factor. That is, use
+`overall ~ factor(synergy)` in the formula. We are doing this so that each
+value of the synergy score (1, 2, 3, 4, and 5) are treated as a category rather
+than a continuous variable.
+
+```{r}
+model <- lm_basic(overall ~ factor(synergy), data = burrito)
+reg_table(model, level = 0.95)
+```
+
+What does the model predict the overall score for a restaurant with a
+synergy score of 3 will be?
+
+**Answer**: 2.5 + 0.6917 = `r 2.5 + 0.6917`
+
+Finally, draw a plot that corresponds to the model you just produced for the
+synergy score. Hint: You'll need the `geom_confint` layer.
+
+```{r}
+ggplot(burrito, aes(factor(synergy), overall)) +
+  geom_confint()
+```
+
+

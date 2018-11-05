@@ -3,14 +3,14 @@ title: "Project III: Data Collection Inference"
 author: "Taylor Arnold"
 ---
 
-**Due**: 2018-11-15 (start of class)
+**Due**: 2018-11-20 (Tuesday, noon)
 
 **Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209-f18/master/projects/project-iii.Rmd" download="project-iii.Rmd" target="_blank">project-iii.Rmd</a>
 
 **Rubric**: [project-iii-rubric.csv](https://github.com/statsmaths/stat209-f18/blob/master/projects/project-iii-rubric.csv)
 
 The goal of this project is collect a dataset with the intent of conducting
-two questions of statistical inference. 
+two questions of statistical inference.
 
 You need to collect a dataset with at least 100 observations, which includes
 three variables:

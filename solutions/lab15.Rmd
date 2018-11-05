@@ -1,0 +1,194 @@
+---
+title: "Lab 15: Sixteen Personality Factors I"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+
+## Sixteen Personality Factors: Pick Your Trait
+
+Over the next two classes we are going to be looking at survey response
+data from the Sixteen Personality Factor Questionnaire in order to practice
+our skills at statistical inference:
+
+```{r}
+pf <- read_csv("https://statsmaths.github.io/stat_data/cattell_16pf.csv")
+```
+
+The dataset use the following fields:
+
+- age: respondent's age in years
+- gender: respondent's self-selected gender
+- country: two letter IATA code for the respondent's IP
+- elapsed: time taken to complete quiz in seconds
+- warmth: personality score from 1-20
+- reasoning: personality score from 1-20
+- emotional_stability: personality score from 1-20
+- dominance: personality score from 1-20
+- liveliness: personality score from 1-20
+- rule_consciousness: personality score from 1-20
+- social_boldness: personality score from 1-20
+- sensitivity: personality score from 1-20
+- vigilance: personality score from 1-20
+- abstractedness: personality score from 1-20
+- privateness: personality score from 1-20
+- apprehension: personality score from 1-20
+- openness_to_change: personality score from 1-20
+- self_reliance: personality score from 1-20
+- perfectionism: personality score from 1-20
+- tension: personality score from 1-20
+- baseline: average score across all 16 personality traits
+
+*To start with, select a particular trait that you will use for the first
+bank of questions. I suggest picking something that popped out when you took
+the test. You can pick any of the 16 other than sensitivity.*
+
+Produce a bar plot of the personality scores for your trait.
+
+```{r}
+
+```
+
+Describe the distribution. Why does a bar plot work here even though the
+variable is numeric?
+
+**Answer**:
+
+Produce a confidence interval for the mean of your trait.
+
+```{r}
+
+```
+
+Now, produce a dataset that consists only of responses from the country of
+Hungary. The 2-letter country code for Hungary is "HU". Produce a confidence
+interval for your trait on the Hungarian dataset.
+
+```{r}
+
+```
+
+What do you notice about this confidence interval compared to the original
+one? Can you explain why this is the case?
+
+**Answer**:
+
+Find a 95% confidence interval for the difference between the average
+male and female value for your personality trait on the Hungarian data.
+
+```{r}
+
+```
+
+**Answer**:
+
+
+Is there a statistically significant difference between men and women's
+average score? If so, what direction is this difference? Does this challenge
+or confirm traditional gender stereotypes (note: not all personality traits
+have one)?
+
+**Answer**:
+
+Construct a new dataset that only has ages from 30-49 (from the original `pf`,
+not just the Hungarian subset). Hint: you can use the filter function twice.
+
+```{r}
+
+```
+
+On the dataset of people ages 30 to 49, create a variable called `fourties` if
+age is greater than or equal to 40.
+
+
+Fit a regression on with your personality trait as a response to test for the
+difference between its mean for people in their 30s versus people in their
+40s. Compute a confidence interval for this difference.
+
+```{r}
+
+```
+
+Is there a statistically significant difference between 30s and 40s average
+scores? If so, what direction is this difference? Does this challenge or
+confirm traditional age stereotypes (note: not all personality traits
+have one)?
+
+**Answer**:
+
+Draw a bar plot of the variable `country` over the whole dataset. Take
+note of the number of countries with a very small number of responses.
+
+```{r}
+
+```
+
+Fitting a model with all of these countries is possible but not very
+useful. When we only have a few responses from some places it makes those
+few regions with a lot of data harding to identify and analyze. Fortunately
+there is a solution in the function `fct_lump`.
+
+Fit a regression model on the entire dataset by the country variable lumped
+into 5 categories.
+
+```{r}
+
+```
+
+Using the previous model, which country (not including "Other") has the
+highest score for your trait? Which has the lowest?
+
+**Answer**:
+
+## Fitting Sensitivity Scores
+
+Fit a model that predicts sensitivity as a function of the baseline
+score.
+
+```{r}
+
+```
+
+Is the slope statistically significantly different from 1? Why is this an
+interesting question in the context of the data?
+
+**Answer**:
+
+Fit a regression model that uses both gender and the baseline score to
+predict your trait.
+
+```{r}
+
+```
+
+Describe the slope for the gender term in words:
+
+**Answer**:
+
+Add predictions from the previous model to `pf`.
+
+```{r}
+
+```
+
+Plot the baseline score as a function of `model_pred`, coloring the points
+base on the gender variable.
+
+```{r}
+
+```
+
+What do the predicted values look like?
+
+**Answer**:
+
+
+
