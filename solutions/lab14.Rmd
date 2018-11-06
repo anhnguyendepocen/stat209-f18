@@ -26,46 +26,51 @@ its weight (carats). Print out the regression table without any confidence
 intervals.
 
 ```{r}
-
+model <- lm_basic(price ~ carat, data = diamonds)
+reg_table(model)
 ```
 
 How would you interpret the slope coefficient in this model?
 
-**Answer**:
+**Answer**: The change in price due to a one carat increase in the size of 
+the diamond.
 
 
 Next, show the same regression as a scatter plot with a smoothing line:
 
 ```{r}
-
+ggplot(diamonds, aes(carat, price)) +
+  geom_point() +
+  geom_bestfit()
 ```
 
 Now, print the same model as in the previous question but add a 95%
 confidence interval.
 
 ```{r}
-
+model <- lm_basic(price ~ carat, data = diamonds)
+reg_table(model, level = 0.95)
 ```
 
 What range of values does the confidence interval give for the intercept
 in this model?
 
-**Answer**:
+**Answer**: from -2282 to -2231
 
 What range of values does the confidence interval give for the slope
 in this model?
 
-**Answer**:
+**Answer**: from 7729 to 7784
 
 Would you be surprised if we collected another set of diamonds, in exactly the
 same way as before, and found a slope estimate equal to 5500?
 
-**Answer**:
+**Answer**: Yes, because it is not in the current confidence interval.
 
 Would you be surprised if we collected another set of diamonds, in exactly the
 same way as before, and found a slope estimate equal to 7500?
 
-**Answer**:
+**Answer**: No, because it is in the current confidence interval.
 
 The biggest use of confidence intervals, at least for us, is to
 determine whether the confidence interval for a slope contains only values
@@ -74,8 +79,9 @@ that are all negative, all positive, or a mix of both.
 Why might this be important? Let's look at our diamond example. Describe the
 meaning of the slope in this linear regression:
 
-**Answer**:
-
+**Answer**: The change in price due to a one carat increase in the size of 
+the diamond.
+ 
 Therefore, if the confidence interval has only positive values, we can
 fairly confidently say is that there is a positive relationship between
 diamond weight and its price.
@@ -84,27 +90,30 @@ Now, fit a regression model on the diamonds dataset, predicting the price as
 a function of depth. Compute the regression table using level equal to .95:
 
 ```{r}
-
+model <- lm_basic(price ~ depth, data = diamonds)
+reg_table(model, level = 0.95)
 ```
 
 What does the model predict will be the price of a diamond with a depth of
 60?
 
-**Answer**:
+**Answer**: 5763.67 + (-29.65) * 60 = `r 5763.67 + (-29.65) * 60`
 
 Describe in words the estimate of the slope in terms of the dataset.
 
-**Answer**:
+**Answer**: Its the increase (actually, decrease) in price for every extra
+mm of depth that the diamond has.
 
 Using the regression table from the previous question, does the
 confidence interval contain only values that are positive, only values that
 are negative, or values that are both positive and negative?
 
-**Answer**:
+**Answer**: It contains only negative values.
 
 Interpret this in words (your words, not just the formal definition).
 
-**Answer**:
+**Answer**: There is strong statistical evidence for a negative relationship
+between diamond depth and price.
 
 ## Diamonds Data - Multiple Linear Regression
 
@@ -129,24 +138,26 @@ reg_table(model, level = 0.95)
 Using the model in the previous question, what do you expect will be the
 price of a diamond with a depth of 50 that weights 2 carats?
 
-**Answer**:
+**Answer**: 4045.3 + (-102.2) * 50 + (7765.1) * 2 = `r 4045.3 + (-102.2) * 50 + (7765.1) * 2`
 
 Are both of the slopes in the model statistically significant? What are
 their signs?
 
-**Answer**:
+**Answer**: Yes. The carats variable is positive and significant. The
+depth variable is negative and significant.
 
 Use the `add_prediction` function to add predictions from this model
 back into the diamonds dataset.
 
 ```{r}
-
+diamonds <- add_prediction(diamonds, model)
+max(diamonds$model_resid)
 ```
 
 What is the largest positive residual (you can either use the `max` function
 or sort the data in the data viewer)?
 
-**Answer**:
+**Answer**: The largest postitive residual is equal to 12731.68.
 
 Interpreting the meaning of the slopes in a regression model with
 multiple variables changes slightly from the version with a single slope.
@@ -158,12 +169,15 @@ first seem counterintuitive that make sense once we remember this caveat.
 Describe the meaning the slopes, in your own words, in the regression model
 above.
 
-**Answer**:
+**Answer**: Its the expected change in price for a change in a diamonds
+depth, with the weight of the diamond held constant. Or, for the second
+coefficent, the expected change in the price of a diamond as a function 
+of its weight with the depth variable held fixed.
 
 Notice that we can do some comparisons quickly with the slope estimates.
 For example, if we have two diamonds with the same depth where one is 1
 carat in weight and the other is 2 carats in weight, how much more do you
 expect the heavier diamond to cost?
 
-**Answer**:
+**Answer**: The difference is just the carat variable slope, 7765.1.
 
