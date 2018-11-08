@@ -9,6 +9,7 @@ library(readr)
 library(ggplot2)
 library(dplyr)
 library(smodels)
+library(forcats)
 theme_set(theme_minimal())
 ```
 
@@ -54,18 +55,21 @@ the test. You can pick any of the 16 other than sensitivity.*
 Produce a bar plot of the personality scores for your trait.
 
 ```{r}
-
+ggplot(pf, aes(warmth)) +
+  geom_bar()
 ```
 
 Describe the distribution. Why does a bar plot work here even though the
 variable is numeric?
 
-**Answer**:
+**Answer**: Most values are between 12 and 16, with the most common number
+being 15.
 
 Produce a confidence interval for the mean of your trait.
 
 ```{r}
-
+model <- lm_basic(warmth ~ 1, data = pf)
+reg_table(model, level = 0.95)
 ```
 
 Now, produce a dataset that consists only of responses from the country of
@@ -73,48 +77,54 @@ Hungary. The 2-letter country code for Hungary is "HU". Produce a confidence
 interval for your trait on the Hungarian dataset.
 
 ```{r}
-
+pf_hu <- filter(pf, country == "HU")
+model <- lm_basic(warmth ~ 1, data = pf_hu)
+reg_table(model, level = 0.95)
 ```
 
 What do you notice about this confidence interval compared to the original
 one? Can you explain why this is the case?
 
-**Answer**:
+**Answer**: It is much wider because there is less data.
 
 Find a 95% confidence interval for the difference between the average
 male and female value for your personality trait on the Hungarian data.
 
 ```{r}
-
+model <- lm_basic(warmth ~ 1 + gender, data = pf_hu)
+reg_table(model, level = 0.95)
 ```
 
-**Answer**:
-
+**Answer**: The difference on the Hungarian dataset is between -1.4083 and  0.971.
 
 Is there a statistically significant difference between men and women's
 average score? If so, what direction is this difference? Does this challenge
 or confirm traditional gender stereotypes (note: not all personality traits
 have one)?
 
-**Answer**:
+**Answer**: No, there is no significant difference.
 
 Construct a new dataset that only has ages from 30-49 (from the original `pf`,
 not just the Hungarian subset). Hint: you can use the filter function twice.
 
 ```{r}
-
+pf_ages <- filter(pf, age >= 30, age <= 49)
 ```
 
 On the dataset of people ages 30 to 49, create a variable called `fourties` if
 age is greater than or equal to 40.
 
+```{r}
+pf_ages$fourties <- pf_ages$age >= 40
+```
 
 Fit a regression on with your personality trait as a response to test for the
 difference between its mean for people in their 30s versus people in their
 40s. Compute a confidence interval for this difference.
 
 ```{r}
-
+model <- lm_basic(warmth ~ fourties, data = pf_ages)
+reg_table(model, level = 0.95)
 ```
 
 Is there a statistically significant difference between 30s and 40s average
@@ -122,13 +132,15 @@ scores? If so, what direction is this difference? Does this challenge or
 confirm traditional age stereotypes (note: not all personality traits
 have one)?
 
-**Answer**:
+**Answer**: Yes, people in the 40s have a statistically significant
+higher warmth score.
 
 Draw a bar plot of the variable `country` over the whole dataset. Take
 note of the number of countries with a very small number of responses.
 
 ```{r}
-
+ggplot(pf, aes(country)) +
+  geom_bar()
 ```
 
 Fitting a model with all of these countries is possible but not very
@@ -140,13 +152,14 @@ Fit a regression model on the entire dataset by the country variable lumped
 into 5 categories.
 
 ```{r}
-
+model <- lm_basic(warmth ~ 1 + fct_lump(country, 5), data = pf)
+reg_table(model, level = 0.95)
 ```
 
 Using the previous model, which country (not including "Other") has the
 highest score for your trait? Which has the lowest?
 
-**Answer**:
+**Answer**: Australia, the baseline country.
 
 ## Fitting Sensitivity Scores
 
@@ -154,41 +167,47 @@ Fit a model that predicts sensitivity as a function of the baseline
 score.
 
 ```{r}
-
+model <- lm_basic(sensitivity ~ 1 + baseline, data = pf)
+reg_table(model, level = 0.95)
 ```
 
 Is the slope statistically significantly different from 1? Why is this an
 interesting question in the context of the data?
 
-**Answer**:
+**Answer**: Yes, it is significantly different from 1. The range is from
+0.92830 to 0.948.
 
 Fit a regression model that uses both gender and the baseline score to
 predict your trait.
 
 ```{r}
-
+model <- lm_basic(sensitivity ~ 1 + baseline + gender, data = pf)
+reg_table(model, level = 0.95)
 ```
 
 Describe the slope for the gender term in words:
 
-**Answer**:
+**Answer**: Its gives the extra amount of the sensitivity score for
+males (here, a decrease because of the negative sign) after accounting
+for the baseline.
 
 Add predictions from the previous model to `pf`.
 
 ```{r}
-
+pf <- add_prediction(pf, model)
 ```
 
 Plot the baseline score as a function of `model_pred`, coloring the points
 base on the gender variable.
 
 ```{r}
-
+ggplot(pf, aes(model_pred, baseline)) +
+  geom_point(aes(color = gender))
 ```
 
 What do the predicted values look like?
 
-**Answer**:
+**Answer**: These are two parallel lines, just as we would expect given the model.
 
 
 

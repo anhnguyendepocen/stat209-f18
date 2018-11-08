@@ -9,6 +9,7 @@ library(readr)
 library(ggplot2)
 library(dplyr)
 library(smodels)
+library(forcats)
 theme_set(theme_minimal())
 ```
 
@@ -48,10 +49,10 @@ Use the `percentiles` function to detect the 3th and 97th percentiles for
 the amount of elapsed time taken to complete the quiz.
 
 ```{r}
-
+percentiles(pf$elapsed)
 ```
 
-**Answer**:
+**Answer**: 369.00 seconds and 4107.46 seconds
 
 We want to construct a new variable called speed that tells us whether
 someone was a fast test taker (less than the 3rd percentile), a slow test
@@ -62,25 +63,27 @@ this:
 
 ```{r}
 pf$speed <- "normal"
-pf$speed[pf$elapsed < 100] <- "fast"
-pf$speed[pf$elapsed > 1000] <- "slow"
+pf$speed[pf$elapsed < 369.00] <- "fast"
+pf$speed[pf$elapsed > 4107.46] <- "slow"
 ```
 
 Modify the code above use the cutoffs you found in the previous question (and
 make sure you run it).
 
-Fit a linear model predicting the prefectionism variable as a function
+Fit a linear model predicting the perfectionism variable as a function
 of the speed variable.
 
 ```{r}
-
+model <- lm_basic(perfectionism ~ 1 + speed, data = pf)
+reg_table(model, level = 0.95)
 ```
-
 
 How does the perfectionism score differ between the three groups? Are both
 slopes significant?
 
-**Answer**:
+**Answer**: There is a significant difference between normal and fast
+as well as slow and fast. Both normal and slow have higher scores than
+the fast group.
 
 In the last question it should have appeared that the perfectionism
 score for the slow and normal groups were very similar. In the regression
@@ -93,20 +96,23 @@ R. To do so, use the function `fct_relevel`; its second argument gives the
 desired baseline level:
 
 ```{r}
-
+model <- lm_basic(perfectionism ~ 1 + fct_relevel(speed, "normal"), data = pf)
+reg_table(model, level = 0.95)
 ```
 
 Using this table, is there a statistically significant difference between
 normal and slow users in their perfectionism score?
 
-**Answer**:
+**Answer**: No, the appear very similar.
 
 Based on the result in the previous describe a
 plausible reason and a some people may finish quickly and a plausible reason
 some may take a long time. Hint: Converting the 97th percentile to hours
 may give you some ideas for the last part.
 
-**Answer**:
+**Answer**: Likely the slow finishers did not just "take their time", but rather
+forgot to submit the quiz, left it open on their browser, and submitted it days
+later. It may also just be a data error.
 
 ## Selected trait, again
 
@@ -116,27 +122,35 @@ matches your trait. Fit a linear regression model that predicts your trait
 as a function of both of these as well as the baseline variable.
 
 ```{r}
-
+model <- lm_basic(warmth ~ 1 + baseline + dominance + sensitivity, data = pf)
+reg_table(model, level = 0.95)
 ```
 
 Interpret the significance and signs of the slopes in the previous model
 for the two traits that you selected. Do their signs match what you would
 have expected?
 
-**Answer**:
+**Answer**: The dominance score is not significant and the sensitivity score
+is negative. I had expected sensitivity to be positively related to warmth.
 
 Take the previous model and add the variables `speed`, `gender`, and
 `country`, the latter lumped into 5 categories.
 
 ```{r}
-
+model <- lm_basic(warmth ~ 1 + baseline + dominance + sensitivity + gender +
+                           speed + fct_lump(country, 5), data = pf)
+reg_table(model, level = 0.95)
 ```
 
 Does this change the slopes for your two traits much?
 
-**Answer**:
+**Answer**: The numbers are slightly different, but the significances
+are the same. Dominance is not significant and sensitivity is and
+negatively correlated.
 
 Summarize the previous model (specifically the relationship between the
 three traits) in words.
 
-**Answer**:
+**Answer**: After controlling for the baseline score, speed, gender, and
+country, sensitivity is negatively correlated with warmth and there is
+no statistically significant evidence that dominance is related to warmth.
