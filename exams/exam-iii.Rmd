@@ -1,0 +1,178 @@
+---
+title: "Exam III: Graphics and Filtering"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(viridis)
+library(dplyr)
+library(forcats)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+## Instructions
+
+This exam is the same format as the labs we have been completing in class. Just
+fill in R code where required and answer the questions where you see the ANSWER
+prompt. The only difference is that you must work on the exam external help. You
+may consult the class notes or look up help online, but may not discuss with
+classmates or directly ask questions of others. If you have any questions about
+this policy, please ask me first before using a resource.
+
+There are five sections Each one requires you to build a regression model with
+`lm_basic`, print out the results, and answer a short question. Each section also
+requires you to produce one plot. The answers do not require justification and
+(this time) you do not need to label the plot axes.
+
+The completed Rmarkdown file must be submitted by 5pm on November 19th (Monday)
+in the 'exams' directory on your GitHub repository. While I suggest that you
+knitand produce an HTML version of the exam (it is a good way to check that your
+code runs correctly), it is not required and you do not need to submit this file.
+If you have trouble with the upload, please email me the Rmd file and provide
+a description of the problem you encountered.
+
+Good luck!
+
+## Weather in NYC
+
+The dataset for this exam is nearly the exact same as that from the previous exam:
+a single year of observed weather data from New York City. A few of the variables
+are slightly different. Read in the dataset with this command (it also reorders
+one variable to make the plots look nicer):
+
+```{r}
+weather <- read_csv("https://statsmaths.github.io/stat_data/weather-nyc-2.csv")
+weather$month <- fct_inorder(weather$month)
+```
+
+Here is a data dictionary for the variables:
+
+- **date**: 	               the date of the weather record, formatted YYYY-MM-DD
+- **actual_mean_temp**: 	   the measured average temperature for that day (celsius)
+- **actual_min_temp**: 	     the measured minimum temperature for that day (celsius)
+- **actual_max_temp**: 	     the measured maximum temperature for that day (celsius)
+- **average_min_temp**: 	   the average minimum temperature on that day since 1880 (celsius)
+- **average_max_temp**:      the average maximum temperature on that day since 1880 (celsius)
+- **record_min_temp**: 	     the lowest ever temperature on that day since 1880 (celsius)
+- **record_max_temp**: 	     the highest ever temperature on that day since 1880 (celsius)
+- **record_min_temp_year**:  the year that the lowest ever temperature occurred
+- **record_max_temp_year**:  the year that the highest ever temperature occurred
+- **actual_precipitation**:  the measured amount of rain or snow for that day (cm)
+- **average_precipitation**: the average amount of rain or snow on that day since 1880 (cm)
+- **record_precipitation**:  the highest amount of rain or snow on that day since 1880 (cm)
+- **record_precipitation**:  the highest amount of rain or snow on that day since 1880 (cm)
+- **month**:                 character description of the month
+- **description**:           character description of the weather type; one of: "rain", "snow", or "dry"
+
+If other questions about what these variables mean arise, please let me know.
+
+## 1. Mean of the actual mean temperature
+
+Draw a bar plot for the variable `actual_mean_temp`:
+
+```{r}
+
+```
+
+Build a model for the average of the variable `actual_mean_temp` and
+produce a 95% confidence interval.
+
+```{r}
+
+```
+
+Give the 95% confidence interval for the mean of the variable
+`actual_mean_temp`:
+
+**ANSWER**:
+
+## 2. Actual mean temperature
+
+Draw a plot using `geom_confint` with a description of the weather (see the
+variable `description`) on the x-axis and the `actual_max_temp` on the y-axis.
+
+```{r}
+
+```
+
+Build the regression model corresponding to the plot above and produce a 95%
+confidence interval.
+
+```{r}
+
+```
+
+Is there a statistically significant difference between the `actual_max_temp`
+on rainy days and dry days?
+
+**ANSWER**:
+
+## 3. Mean versus minimum
+
+Draw a scatter plot with the `actual_mean_temp` on the x-axis and `actual_min_temp`
+on the y-axis. Include a best fit line.
+
+```{r}
+
+```
+
+Fit a regression model corresponding the plot above (i.e., predict the variable
+`actual_min_temp` as a function of `actual_mean_temp`):
+
+```{r}
+
+```
+
+What does the model predict will be the minimum tempurature on a day
+where the average temperature is 20 degrees Celsius.
+
+**ANSWER**:
+
+## 4. Maximum temperature by month
+
+Draw a boxplot with month on the x-axis and `actual_max_temp` on the y-axis:
+
+```{r}
+
+```
+
+Fit a model corresponding the plot above:
+
+```{r}
+
+```
+
+The baseline in the model should be July. What months do NOT
+have a statistically significant difference in `actual_max_temp`
+compared to July.
+
+**ANSWER**:
+
+## 5. Record setting temperature by month
+
+Draw a plot with `geom_confint` using month on the x-axis and the
+`record_max_temp_year` on the y-axis.
+
+```{r}
+
+```
+
+Fit a model corresponding to the plot and produce a 95% confidence interval.
+
+```{r}
+
+```
+
+What range of years does your model predict the average year of
+the record max temperature will be in April?
+
+**ANSWER**:
+
+
+
+
