@@ -17,20 +17,31 @@ week of the semester, you will give a brief presentation of the tutorial. I
 will make all of these available on the class website so that everyone can
 read and benefit from them.
 
+I am open to other options, but here are some ideas that would be good topics.
+
+
 We will discuss other possibilities in class, but here are several options of
 topics for the project:
 
 - using the `glm` function to fit a logistic regression
-- motivation and usage of a fixed effects model
-- usage of an [ROpenSci package](https://ropensci.org/packages/)
-- how to make interactive graphics
-- how to make animated graphics
-- how to visualize network data
-- using the `melt` function
-- using the `gather` function
-- making use of "base" graphics
+- using the `glm` function to fit a Poisson regression
+- how to visualize network/graph data (**igraph**)
+- using the `melt` function (see **reshape**)
+- using the `gather` function (see **tidyr**)
 - loading, writing, and basic manipulation of image data
 - running a topic model over a corpus of texts
+- running and tuning a random forest model (**randomforest**)
+- running and visualizing a gradient boosted trees (see **gbm**)
+- dealing with missing values
+- how to make interactive graphics with **ggplotly**
+- making use of "base" graphics (see the function **plot**)
+- using the penalized lasso (**glmnet**)
+- fitting an autoregressive model (see the `arima()` function)
+- fitting a moving averages model (see the `arima()` function)
+- using the Kolmogorov-Smirnov test (see `ks.test()`)
 
-I will meet with everyone while working on this project to make sure the scope
-of the tutorial is neither too narrow nor too broad.
+Note that you should, as part of the tutorial, find 1-2 datasets that you can
+demonstrate the material with and ask questions on. I suggest setting up your
+lab to include roughly 10 questions. I will meet with everyone while working
+on this project to make sure the scope of the tutorial is neither too narrow
+nor too broad.
